@@ -368,4 +368,4 @@ Die kursbegleitende Gesamtfassung steht in [`../checkliste.md`](../checkliste.md
 
 ---
 
-*Grundlage: [`coursebook/1.4`](../../coursebook/1.4/1.4_Vier-Wellen-KI-Kategorien-Hype-Cycle.md) · [`coursebook/1.5`](../../coursebook/1.5/1.5_Strategisches-Prompt-Engineering.md) · Gewichtung nach [`coursebook/0`](../../coursebook/0/00_Index-und-Gewichtung.md). Zahlen, Fälle und Verfahren sind aus den Kursunterlagen übernommen. Die Übungsaufgaben und der Abschnitt „Noch offen" sind Vorschläge, die ich bestätigen oder ersetzen sollte.*
+*Grundlage: [`coursebook/1.4`](../../coursebook/woche-1/1.4/1.4_Vier-Wellen-KI-Kategorien-Hype-Cycle.md) · [`coursebook/1.5`](../../coursebook/woche-1/1.5/1.5_Strategisches-Prompt-Engineering.md) · Gewichtung nach [`coursebook/0`](../../coursebook/0/00_Index-und-Gewichtung.md). Zahlen, Fälle und Verfahren sind aus den Kursunterlagen übernommen. Die Übungsaufgaben und der Abschnitt „Noch offen" sind Vorschläge, die ich bestätigen oder ersetzen sollte.*
