@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coursebook – Viewer</title>
+<style>
+  :root{
+    --bg:#fbfbfa; --fg:#1c1b19; --muted:#6b6862; --line:#e3e0da;
+    --card:#ffffff; --accent:#7a5cff; --accent-soft:#f0ecff; --shadow:0 1px 2px rgba(0,0,0,.05);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#17161a; --fg:#eceaf0; --muted:#a09daa; --line:#302e38;
+      --card:#1f1e24; --accent:#a897ff; --accent-soft:#282342; --shadow:none;
+    }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  }
+  header{
+    position:sticky; top:0; z-index:10; background:var(--bg);
+    border-bottom:1px solid var(--line); padding:14px 24px;
+    display:flex; gap:14px; align-items:center; flex-wrap:wrap;
+  }
+  /* Lesefortschritt: dünner Balken an der Unterkante der Kopfleiste */
+  #fortschritt{
+    position:absolute; left:0; right:0; bottom:-1px; height:3px;
+    background:var(--line); pointer-events:none;
+  }
+  #fortschritt i{
+    display:block; height:100%; width:0; background:var(--accent);
+    transition:width .12s linear;
+  }
+  #pct{font-size:12px; color:var(--muted); white-space:nowrap; font-variant-numeric:tabular-nums}
+  @media (max-width:720px){ #pct{display:none} }
+  header h1{font-size:15px; font-weight:600; margin:0; letter-spacing:-.01em}
+  header .spacer{flex:1}
+  #nav,#bereich{
+    max-width:min(46vw,420px); padding:7px 30px 7px 11px; border:1px solid var(--line);
+    border-radius:7px; background:var(--card); color:var(--fg); font:inherit; font-size:14px;
+    cursor:pointer; appearance:none; -webkit-appearance:none;
+    background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),
+                     linear-gradient(135deg,currentColor 50%,transparent 50%);
+    background-position:calc(100% - 16px) 52%, calc(100% - 11px) 52%;
+    background-size:5px 5px, 5px 5px; background-repeat:no-repeat;
+  }
+  /* Der Bereichsschalter steht vor der Dokumentwahl und bleibt schmal,
+     damit auf kleinen Fenstern die Dokumenttitel den Platz behalten. */
+  #bereich{max-width:min(30vw,190px); font-weight:600}
+  #nav:hover,#bereich:hover{border-color:var(--accent)}
+  #nav:focus,#bereich:focus{outline:2px solid var(--accent); outline-offset:-1px; border-color:transparent}
+  #nav[hidden],#bereich[hidden]{display:none}
+  #q{
+    width:260px; max-width:45vw; padding:7px 11px; border:1px solid var(--line);
+    border-radius:7px; background:var(--card); color:var(--fg); font-size:14px;
+  }
+  #q:focus{outline:2px solid var(--accent); outline-offset:-1px; border-color:transparent}
+  .btn{
+    padding:7px 13px; border:1px solid var(--line); border-radius:7px;
+    background:var(--card); color:var(--fg); font-size:14px; cursor:pointer;
+  }
+  .btn:hover{border-color:var(--accent); color:var(--accent)}
+  #suche{display:flex; gap:6px; align-items:center}
+  .btn.step{padding:6px 10px; line-height:1; font-size:16px}
+  .btn.step[disabled]{opacity:.35; cursor:default}
+  .btn.step[disabled]:hover{border-color:var(--line); color:var(--fg)}
+  mark{background:var(--accent-soft); color:inherit; border-radius:3px; padding:0 1px;
+       scroll-margin-top:96px}
+  mark.aktiv{background:var(--accent); color:var(--bg)}
+  #count{font-size:13px; color:var(--muted); white-space:nowrap}
+  main{max-width:1080px; margin:0 auto; padding:32px 24px 40px}
+  #drop{
+    border:2px dashed var(--line); border-radius:12px; padding:56px 24px;
+    text-align:center; color:var(--muted); background:var(--card);
+  }
+  #drop.over{border-color:var(--accent); background:var(--accent-soft); color:var(--fg)}
+  #drop strong{display:block; color:var(--fg); font-size:17px; margin-bottom:8px}
+  #drop code{background:var(--bg); padding:2px 6px; border-radius:4px; font-size:13px}
+  article h1{font-size:30px; letter-spacing:-.02em; margin:0 0 6px}
+  article h2{
+    font-size:20px; margin:44px 0 14px; padding-top:20px;
+    border-top:1px solid var(--line); letter-spacing:-.01em;
+  }
+  article h3{font-size:16px; margin:28px 0 10px}
+  article h1,article h2,article h3{scroll-margin-top:88px}
+  article p{margin:12px 0}
+  article a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent}
+  article a:hover{border-bottom-color:var(--accent)}
+  article blockquote{
+    margin:24px 0; padding:14px 18px; border-left:3px solid var(--accent);
+    background:var(--card); border-radius:0 8px 8px 0; color:var(--muted);
+  }
+  article blockquote p{margin:0}
+  article ul,article ol{padding-left:22px}
+  /* Der MCP-Kurs bringt Bildschirmfotos mit, teils breiter als die Spalte. */
+  article img{max-width:100%; height:auto; border:1px solid var(--line); border-radius:9px; margin:8px 0}
+  /* Aufloesung der Quizfragen: eingeklappt, damit die Frage zum Selbsttest taugt. */
+  article details{
+    margin:14px 0; padding:12px 16px; background:var(--card);
+    border:1px solid var(--line); border-radius:9px;
+  }
+  article details summary{cursor:pointer; font-weight:600; color:var(--accent)}
+  article details p{margin:8px 0 0; font-size:14.5px}
+  article li{margin:6px 0}
+  article code{background:var(--card); padding:2px 6px; border-radius:4px; font-size:13.5px}
+  article pre{background:var(--card); border:1px solid var(--line); border-radius:9px;
+              padding:14px 16px; overflow-x:auto}
+  article pre code{background:none; padding:0; font-size:13px}
+  .tablewrap{overflow-x:auto; margin:18px 0; border:1px solid var(--line); border-radius:10px; box-shadow:var(--shadow)}
+  table{border-collapse:collapse; width:100%; background:var(--card); font-size:14.5px}
+  th,td{padding:11px 14px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top}
+  /* Kein position:sticky am th. Der .tablewrap ist ein eigener Scroll-Container;
+     ein klebender Kopf rutscht darin nach unten und verdeckt die erste Datenzeile. */
+  th{
+    background:var(--bg); font-weight:600; font-size:12.5px; text-transform:uppercase;
+    letter-spacing:.04em; color:var(--muted);
+  }
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover td{background:var(--accent-soft)}
+  tr.hidden{display:none}
+  .err{padding:18px; border:1px solid #d4574c; border-radius:10px; background:var(--card); color:#d4574c; text-align:left}
+  .err code{background:var(--bg); padding:2px 6px; border-radius:4px; font-size:13px}
+
+  /* --- Dateiliste unten --- */
+  #files{
+    border-top:1px solid var(--line); background:var(--card);
+    padding:22px 24px 40px; margin-top:48px;
+  }
+  #files .inner{max-width:1080px; margin:0 auto}
+  #files .head{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:14px}
+  #build{font-size:11px; color:var(--muted); border:1px solid var(--line);
+         border-radius:5px; padding:1px 7px; white-space:nowrap}
+  #files h2{font-size:13px; font-weight:600; margin:0; text-transform:uppercase; letter-spacing:.05em; color:var(--muted)}
+  #files .spacer{flex:1}
+  #filehint{font-size:13.5px; color:var(--muted); margin:0 0 14px}
+  #filehint code{background:var(--bg); padding:2px 6px; border-radius:4px; font-size:12.5px}
+  #filelist{list-style:none; margin:0; padding:0; display:grid; gap:8px;
+            grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+  #filelist button{
+    width:100%; text-align:left; cursor:pointer; font:inherit; font-size:14px;
+    background:var(--bg); color:var(--fg); border:1px solid var(--line);
+    border-radius:9px; padding:10px 13px; display:flex; gap:10px; align-items:baseline;
+  }
+  #filelist button:hover{border-color:var(--accent)}
+  #filelist button.active{border-color:var(--accent); background:var(--accent-soft)}
+  #filelist .nm{font-weight:500; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+  #filelist .sz{margin-left:auto; font-size:12px; color:var(--muted); white-space:nowrap}
+  #filelist .pt{display:block; font-size:12px; color:var(--muted); margin-top:2px;
+                overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+  /* Bereichsüberschrift in der Liste, nur sichtbar bei "Alle Bereiche" */
+  #filelist li.gruppe{
+    grid-column:1/-1; font-size:11.5px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--muted); padding:10px 2px 2px;
+    border-top:1px solid var(--line); margin-top:6px;
+  }
+  #filelist li.gruppe:first-child{border-top:none; margin-top:0; padding-top:0}
+</style>
+</head>
+<body>
+
+<header>
+  <h1 id="title">Coursebook</h1>
+  <select id="bereich" aria-label="Bereich wählen" title="Bereich wählen (Verzeichnis)"></select>
+  <select id="nav" aria-label="Dokument wählen" title="Dokument wählen"></select>
+  <span id="pct" hidden></span>
+  <span class="spacer"></span>
+  <span id="suche" hidden>
+    <input id="q" type="search" placeholder="Im Dokument suchen …" autocomplete="off">
+    <button class="btn step" id="prev" title="Vorheriger Treffer (Umschalt+Enter)" aria-label="Vorheriger Treffer">&#8249;</button>
+    <button class="btn step" id="next" title="Nächster Treffer (Enter)" aria-label="Nächster Treffer">&#8250;</button>
+  </span>
+  <span id="count"></span>
+  <button class="btn" id="pick">Datei …</button>
+  <input type="file" id="file" accept=".md,.markdown,text/markdown" hidden>
+  <div id="fortschritt" role="progressbar" aria-label="Leseposition im Dokument"
+       aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" hidden><i></i></div>
+</header>
+
+<main>
+  <div id="drop">
+    <strong>Dokument unten auswählen</strong>
+    Die verfügbaren Dateien stehen am Seitenende, umgeschaltet wird der Bereich oben links.<br>
+    Beim Öffnen per Doppelklick (<code>file://</code>) darf der Browser sie nicht selbst lesen —
+    zieh dann den Ordner <code>aitm_daniel</code> in dieses Fenster
+    (dann sind Coursebook, Bibliothek <em>und</em> Artefakte lesbar).
+  </div>
+  <article id="out" hidden></article>
+</main>
+
+<section id="files">
+  <div class="inner">
+    <div class="head">
+      <h2>Dokumente</h2>
+      <span id="build" title="Stand dieser viewer.html"></span>
+      <span class="spacer"></span>
+      <button class="btn" id="pickdir">Ordner einlesen …</button>
+      <input type="file" id="dir" webkitdirectory directory multiple hidden>
+    </div>
+    <p id="filehint">Wird geladen …</p>
+    <ul id="filelist"></ul>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+<!-- Dokumentliste. Als <script> eingebunden, weil das auch bei file:// funktioniert,
+     wo fetch() gesperrt ist. Gepflegt wird ausschliesslich dateien.js.
+     Ueber http(s) haengt ein Zeitstempel an der Adresse: sonst liefert der
+     Browser nach einer Aenderung an dateien.js weiter die alte Liste aus dem
+     Cache, und neue Dokumente erscheinen erst nach Strg+F5. Bei file://
+     bleibt die Adresse unveraendert, weil manche Browser dort Parameter
+     nicht mitmachen. document.write haelt die Ausfuehrungsreihenfolge. -->
+<script>
+  document.write('<script src="dateien.js' +
+    (location.protocol.indexOf('http') === 0 ? '?t=' + Date.now() : '') +
+    '"><\/script>');
+</script>
+<script>
+(function(){
+  var out=document.getElementById('out'), drop=document.getElementById('drop'),
+      q=document.getElementById('q'), count=document.getElementById('count'),
+      file=document.getElementById('file'), dir=document.getElementById('dir'),
+      filelist=document.getElementById('filelist'),
+      filehint=document.getElementById('filehint'),
+      nav=document.getElementById('nav'),
+      bereichSel=document.getElementById('bereich'),
+      suche=document.getElementById('suche'),
+      prevBtn=document.getElementById('prev'),
+      nextBtn=document.getElementById('next'),
+      balken=document.getElementById('fortschritt'),
+      balkenFuell=balken.querySelector('i'),
+      pct=document.getElementById('pct');
+
+  var rohHTML='';          // gerendertes Dokument ohne Trefferauszeichnung
+  var SPEICHER='coursebook.zuletzt';
+  var SPEICHER_BEREICH='coursebook.bereich';
+
+  /* ---------- Bereiche (Verzeichnisse) ----------
+     Ein Bereich ist ein Ordner, aus dem der Viewer liest. Neuer Ordner?
+     Hier eine Zeile ergaenzen und die Dokumente in dateien.js eintragen.
+       id     : interner Schluessel, auch der Wert in dateien.js ("bereich")
+       titel  : Beschriftung im Umschalter
+       ordner : Ordnername, an dem der Bereich im Pfad erkannt wird
+                (leer = Standardbereich fuer alles ohne Treffer)
+       nummeriert : true  -> Sortierung nach Nummer im Pfad (1.4 < 2.1)
+                    false -> alphabetisch nach Titel                       */
+  var BEREICHE = [
+    { id:'coursebook',   titel:'Einstieg',     ordner:'coursebook',   nummeriert:true  },
+    // Je Kurswoche ein Ordner unterhalb von coursebook/. Neue Woche? Hier eine
+    // Zeile ergaenzen und die Dokumente in dateien.js eintragen. Innerhalb der
+    // Woche wird nach der Nummer im Pfad sortiert (4.0 < 4.1 < 4.5).
+    { id:'woche-1',      titel:'Woche 1',      ordner:'woche-1',      nummeriert:true  },
+    { id:'woche-2',      titel:'Woche 2',      ordner:'woche-2',      nummeriert:true  },
+    { id:'woche-3',      titel:'Woche 3',      ordner:'woche-3',      nummeriert:true  },
+    { id:'woche-4',      titel:'Woche 4',      ordner:'woche-4',      nummeriert:true  },
+    { id:'bibliothek',   titel:'Bibliothek',   ordner:'bibliothek',   nummeriert:false },
+    { id:'artefakte',    titel:'Artefakte',    ordner:'artefakte',    nummeriert:false },
+    { id:'examples',     titel:'Beispiele',    ordner:'examples',     nummeriert:false },
+    { id:'lerntagebuch', titel:'Lerntagebuch', ordner:'lerntagebuch', nummeriert:false },
+    // Offline-Kopie des Hugging-Face-MCP-Kurses. Die angezeigten .md liegen in
+    // AI_Course/mcp-course/viewer/ und werden aus den .mdx daneben erzeugt
+    // (coursetools/mcp-course-aufbereiten.py). Sortiert wird alphabetisch, die
+    // Titel tragen dafuer eine zweistellige Nummer in Kursreihenfolge.
+    { id:'mcp-course',   titel:'MCP-Kurs',     ordner:'mcp-course',   nummeriert:false }
+  ];
+  var STANDARD_BEREICH = BEREICHE[0].id;
+  var bereichAktiv = STANDARD_BEREICH;
+
+  function bereichDef(id){
+    for(var i=0;i<BEREICHE.length;i++) if(BEREICHE[i].id===id) return BEREICHE[i];
+    return null;
+  }
+  function bereichIndex(id){
+    for(var i=0;i<BEREICHE.length;i++) if(BEREICHE[i].id===id) return i;
+    return BEREICHE.length;
+  }
+  function bereichTitel(id){
+    var b=bereichDef(id); return b ? b.titel : id;
+  }
+
+  // Bereich aus dem Pfad ableiten. Greift fuer Manifest-Pfade
+  // ("../bibliothek/x.md") genauso wie fuer eingelesene Ordner
+  // ("aitm_daniel/bibliothek/x.md"). Ohne Treffer: Standardbereich.
+  function bereichVon(pfad, vorgabe){
+    if(vorgabe && bereichDef(vorgabe)) return vorgabe;
+    var p = String(pfad||'').replace(/\\/g,'/').toLowerCase();
+    for(var i=0;i<BEREICHE.length;i++){
+      var o = (BEREICHE[i].ordner||'').toLowerCase();
+      if(!o) continue;
+      if(p.indexOf(o+'/')===0 || p.indexOf('/'+o+'/')>-1) return BEREICHE[i].id;
+    }
+    return STANDARD_BEREICH;
+  }
+
+  function bereichMerken(id){ try{ localStorage.setItem(SPEICHER_BEREICH, id); }catch(e){} }
+  function bereichGemerkt(){ try{ return localStorage.getItem(SPEICHER_BEREICH); }catch(e){ return null; } }
+
+  // Der Merker liegt nur in diesem Browser. Ist er gesperrt (privates Fenster,
+  // blockierte Website-Daten), faellt alles still auf den ersten Eintrag zurueck.
+  function merken(pfad){ try{ localStorage.setItem(SPEICHER, pfad); }catch(e){} }
+  function gemerkt(){ try{ return localStorage.getItem(SPEICHER); }catch(e){ return null; } }
+  var treffer=[], aktiv=-1;
+
+  var found=[];        // {name, path, size, local, get:()=>Promise<string>}
+  var activePath=null;
+  var isFile = (location.protocol === 'file:');
+
+  function isMd(n){ return /\.(md|markdown|mdown|mkd)$/i.test(n); }
+  function base(p){ return String(p).replace(/^.*[\/\\]/,''); }
+  function kb(b){ return b<1024 ? b+' B' : (b/1024).toFixed(1).replace('.',',')+' kB'; }
+
+  function fail(html){
+    drop.hidden=false; out.hidden=true; suche.hidden=true; count.textContent='';
+    balken.hidden=true; pct.hidden=true;
+    drop.innerHTML='<div class="err">'+html+'</div>';
+  }
+
+  // YAML-Kopf abschneiden. Ohne das rendert marked ihn als Setext-Ueberschrift
+  // ("Text, darunter ---" ist in Markdown eine H2), und jedes Artefakt beginnt
+  // mit einer riesigen Zeile voller Metadaten. Coursebook-Dateien haben keinen
+  // Kopf, dort aendert sich nichts.
+  function ohneKopf(md){
+    var t = String(md||'');
+    if(!/^---\r?\n/.test(t)) return t;
+    var m = t.match(/^---\r?\n[\s\S]*?\r?\n---[ \t]*\r?\n?/);
+    return m ? t.slice(m[0].length) : t;
+  }
+
+  function render(md, label, path){
+    if(typeof marked==='undefined'){
+      fail('Der Markdown-Renderer konnte nicht geladen werden (keine Internetverbindung?). '+
+           'Die Seite braucht cdnjs.cloudflare.com beim ersten Laden.');
+      return;
+    }
+    out.innerHTML=marked.parse(ohneKopf(md));
+    out.querySelectorAll('table').forEach(function(t){
+      var w=document.createElement('div'); w.className='tablewrap';
+      t.parentNode.insertBefore(w,t); w.appendChild(t);
+    });
+    out.querySelectorAll('a').forEach(function(a){
+      if(/^https?:/.test(a.getAttribute('href')||'')){ a.target='_blank'; a.rel='noopener'; }
+    });
+    // Der Kopftitel bleibt die Marke; welches Dokument offen ist,
+    // zeigt das Auswahlfeld daneben.
+    if(label) document.title = label + ' – Coursebook';
+    activePath = path || null;
+    if(activePath) merken(activePath);
+    // Oeffnet ein Querverweis ein Dokument aus einem anderen Bereich,
+    // schaltet der Umschalter mit, damit die Liste dazu passt.
+    var offen = activePath ? ausListe(activePath) : null;
+    if(offen && bereichAktiv!=='alle' && offen.bereich && offen.bereich!==bereichAktiv){
+      bereichAktiv = offen.bereich; bereichMerken(bereichAktiv);
+    }
+    drop.hidden=true; out.hidden=false; suche.hidden=false;
+    rohHTML = out.innerHTML;          // Fassung ohne Trefferauszeichnung merken
+    treffer=[]; aktiv=-1; q.value=''; count.textContent='';
+    prevBtn.disabled = nextBtn.disabled = true;
+    paintList();
+    window.scrollTo({top:0, behavior:'smooth'});
+    balkenFuell.style.width='0%'; fortschritt();
+    if(activePath && history.replaceState){
+      history.replaceState(null, '', '#' + activePath + (zielAnker ? '#'+zielAnker : ''));
+    }
+    if(zielAnker){
+      var ziel = zielAnker; zielAnker = '';
+      setTimeout(function(){ zuAnker(ziel); fortschritt(); }, 60);
+    }
+  }
+
+  /* ---------- Querverweise zwischen Dokumenten ---------- */
+
+  // Link der Form  #1.4/datei.md            -> anderes Dokument öffnen
+  //           oder #1.4/datei.md#abschnitt  -> öffnen und zur Überschrift springen
+  // Alles ohne ".md" bleibt ein normaler Sprung innerhalb des Dokuments.
+  function zerlege(hash){
+    var roh = decodeURIComponent(String(hash||'').replace(/^#/,''));
+    var i = roh.toLowerCase().indexOf('.md');
+    if(i < 0) return null;
+    var pfad = roh.slice(0, i+3);
+    var rest = roh.slice(i+3).replace(/^#/,'');
+    return {pfad:pfad, anker:rest};
+  }
+
+  // Pfad fuer Vergleiche vereinheitlichen: Backslashes, fuehrende ../,
+  // Gross-/Kleinschreibung. So findet ein Querverweis auf
+  // "bibliothek/x.md" auch den Eintrag "../bibliothek/x.md".
+  function normPfad(p){
+    return String(p||'').replace(/\\/g,'/').replace(/^(\.\.\/)+/,'').replace(/^\.\//,'').toLowerCase();
+  }
+  function ausListe(pfad){
+    var i;
+    for(i=0;i<found.length;i++) if(found[i].path === pfad) return found[i];
+    var n = normPfad(pfad);
+    for(i=0;i<found.length;i++){
+      var f = normPfad(found[i].path);
+      if(f === n || f.slice(-n.length-1) === '/'+n || n.slice(-f.length-1) === '/'+f) return found[i];
+    }
+    return null;
+  }
+
+  function zuAnker(id){
+    if(!id) return;
+    var el = document.getElementById(id) ||
+             out.querySelector('[name="'+id.replace(/"/g,'')+'"]');
+    if(el) el.scrollIntoView({block:'start', behavior:'smooth'});
+  }
+
+  function folgeHash(hash, still){
+    var z = zerlege(hash); if(!z) return false;
+    var ziel = ausListe(z.pfad);
+    if(!ziel){
+      fail('Das verlinkte Dokument <code>'+z.pfad+'</code> steht nicht in <code>dateien.js</code>.');
+      return true;
+    }
+    if(ziel.path === activePath){ zuAnker(z.anker); return true; }
+    zielAnker = z.anker;
+    openDoc(ziel);
+    return true;
+  }
+
+  var zielAnker = '';   // nach dem Laden anzuspringende Überschrift
+
+  // Klicks auf Querverweise abfangen
+  document.addEventListener('click', function(ev){
+    var a = ev.target.closest && ev.target.closest('a[href^="#"]');
+    if(!a) return;
+    var z = zerlege(a.getAttribute('href'));
+    if(!z) return;                      // normaler Sprung im Dokument
+    ev.preventDefault();
+    if(history.replaceState) history.replaceState(null,'','#'+a.getAttribute('href').replace(/^#/,''));
+    folgeHash(a.getAttribute('href'));
+  });
+
+  window.addEventListener('hashchange', function(){ folgeHash(location.hash); });
+
+  /* ---------- Lesefortschritt ---------- */
+
+  // Bezugsgröße ist der Artikel, nicht die ganze Seite: die Dateiliste am
+  // Fuß gehört nicht zum Dokument und soll den Wert nicht verwässern.
+  function fortschritt(){
+    if(out.hidden){ balken.hidden=true; pct.hidden=true; return; }
+    balken.hidden=false; pct.hidden=false;
+    var kopf   = document.querySelector('header').offsetHeight;
+    var start  = window.scrollY + out.getBoundingClientRect().top;
+    var spanne = out.offsetHeight - (window.innerHeight - kopf);
+    var anteil = spanne <= 0 ? 1 : (window.scrollY + kopf - start) / spanne;
+    anteil = Math.max(0, Math.min(1, anteil));
+    balkenFuell.style.width = (anteil*100).toFixed(2) + '%';
+    var ganz = Math.round(anteil*100);
+    pct.textContent = ganz + ' %';
+    balken.setAttribute('aria-valuenow', ganz);
+  }
+
+  var tickt=false;
+  function fortschrittGeplant(){
+    if(tickt) return; tickt=true;
+    requestAnimationFrame(function(){ tickt=false; fortschritt(); });
+  }
+  window.addEventListener('scroll', fortschrittGeplant, {passive:true});
+  window.addEventListener('resize', fortschrittGeplant);
+
+  /* ---------- Volltextsuche im offenen Dokument ---------- */
+
+  function zaehlerZeigen(){
+    if(!treffer.length){
+      count.textContent = q.value.trim() ? 'kein Treffer' : '';
+    } else {
+      count.textContent = (aktiv+1) + ' / ' + treffer.length;
+    }
+    prevBtn.disabled = nextBtn.disabled = treffer.length < 2;
+  }
+
+  function suchen(){
+    var term = q.value.trim();
+    if(rohHTML) out.innerHTML = rohHTML;   // frühere Markierungen entfernen
+    treffer = []; aktiv = -1;
+    if(term.length < 2){ zaehlerZeigen(); return; }
+
+    var lower = term.toLowerCase();
+    var walker = document.createTreeWalker(out, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if(!n.nodeValue) return NodeFilter.FILTER_REJECT;
+        var el = n.parentNode;
+        if(el && (el.nodeName==='SCRIPT' || el.nodeName==='STYLE')) return NodeFilter.FILTER_REJECT;
+        return n.nodeValue.toLowerCase().indexOf(lower) > -1
+             ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    var knoten = [], n;
+    while((n = walker.nextNode())) knoten.push(n);
+
+    knoten.forEach(function(tn){
+      var text = tn.nodeValue, low = text.toLowerCase();
+      var frag = document.createDocumentFragment(), i = 0, j;
+      while((j = low.indexOf(lower, i)) > -1){
+        if(j > i) frag.appendChild(document.createTextNode(text.slice(i, j)));
+        var m = document.createElement('mark');
+        m.textContent = text.slice(j, j + term.length);
+        frag.appendChild(m); treffer.push(m);
+        i = j + term.length;
+      }
+      if(i < text.length) frag.appendChild(document.createTextNode(text.slice(i)));
+      tn.parentNode.replaceChild(frag, tn);
+    });
+
+    if(treffer.length) springe(0, true);
+    else zaehlerZeigen();
+  }
+
+  // Zu einem Treffer springen. absolut=true: Index direkt, sonst Schrittweite.
+  function springe(wert, absolut){
+    if(!treffer.length) return;
+    if(aktiv > -1 && treffer[aktiv]) treffer[aktiv].classList.remove('aktiv');
+    aktiv = absolut ? wert : (aktiv + wert + treffer.length) % treffer.length;
+    var m = treffer[aktiv];
+    m.classList.add('aktiv');
+    m.scrollIntoView({block:'center', behavior:'smooth'});
+    zaehlerZeigen();
+  }
+
+  var tippTimer;
+  q.addEventListener('input', function(){
+    clearTimeout(tippTimer);
+    tippTimer = setTimeout(suchen, 160);
+  });
+  q.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); springe(e.shiftKey ? -1 : 1); }
+    if(e.key === 'Escape'){ q.value=''; suchen(); q.blur(); }
+  });
+  prevBtn.addEventListener('click', function(){ springe(-1); q.focus(); });
+  nextBtn.addEventListener('click', function(){ springe(1); q.focus(); });
+
+  // Strg/Cmd+F fängt die Suche im Dokument ab, solange eines offen ist
+  document.addEventListener('keydown', function(e){
+    if((e.ctrlKey || e.metaKey) && e.key.toLowerCase()==='f' && !suche.hidden){
+      e.preventDefault(); q.focus(); q.select();
+    }
+  });
+
+  /* ---------- Einträge ---------- */
+
+  // Manifest-Eintrag: wird über das Netz nachgeladen (http/https).
+  function remote(path, label, bereich){
+    return {name: label||base(path), path:path, size:0, local:false,
+      bereich: bereichVon(path, bereich),
+      get:function(){
+        return fetch(path,{cache:'no-store'}).then(function(r){
+          if(!r.ok) throw new Error('HTTP '+r.status);
+          return r.text();
+        });
+      }};
+  }
+
+  // Lokal gewählte oder hereingezogene Datei.
+  function local(f, path, bereich){
+    var p = path||f.webkitRelativePath||f.name;
+    return {name:f.name, path:p, size:f.size, local:true,
+            bereich: bereichVon(p, bereich),
+            get:function(){ return f.text(); }};
+  }
+
+  // Lokale Datei ersetzt den Manifest-Eintrag mit gleichem Dateinamen,
+  // damit die Liste nicht doppelt wird und der Titel erhalten bleibt.
+  // Der Bereich muss dabei uebereinstimmen: gleichnamige Dateien in
+  // coursebook/ und bibliothek/ bleiben zwei Eintraege.
+  function merge(entry){
+    for(var i=0;i<found.length;i++){
+      if(base(found[i].path).toLowerCase() === base(entry.path).toLowerCase() &&
+         found[i].bereich === entry.bereich){
+        if(entry.local && !found[i].local){
+          entry.name = found[i].name;   // Titel aus dem Manifest behalten
+          entry.path = found[i].path;
+          found[i] = entry;
+        }
+        return found[i];
+      }
+    }
+    found.push(entry);
+    return entry;
+  }
+
+  // Pfad innerhalb des Bereichs, ohne ../ und ohne den Bereichsordner.
+  // Damit greift die Nummernsortierung auch bei eingelesenen Ordnern.
+  function relPfad(f){
+    var p = String(f.path||'').replace(/\\/g,'/').replace(/^(\.\.\/)+/,'');
+    var b = bereichDef(f.bereich);
+    if(b && b.ordner){
+      var i = p.toLowerCase().indexOf(b.ordner.toLowerCase()+'/');
+      if(i > -1) p = p.slice(i + b.ordner.length + 1);
+    }
+    return p;
+  }
+
+  // Nummer aus dem Pfad ("1.4/..." -> [1,4]), ersatzweise aus dem Titel ("1.4 · ...").
+  function nummer(f){
+    var m = /(\d+(?:\.\d+)*)/.exec(relPfad(f).split('/')[0]) || /(\d+(?:\.\d+)*)/.exec(f.name);
+    return m ? m[1].split('.').map(Number) : null;
+  }
+
+  // Erst nach Bereich (Reihenfolge aus BEREICHE), dann innerhalb des
+  // Bereichs: nummerierte Bereiche aufsteigend nach Nummer
+  // (1.4 < 1.5 < 1.10 < 2.1, ohne Nummer ans Ende), sonst alphabetisch.
+  function sortiere(){
+    found.sort(function(a,b){
+      var ba=bereichIndex(a.bereich), bb=bereichIndex(b.bereich);
+      if(ba!==bb) return ba-bb;
+      var def=bereichDef(a.bereich);
+      if(def && def.nummeriert===false) return a.name.localeCompare(b.name,'de');
+      var A=nummer(a), B=nummer(b);
+      if(A && B){
+        for(var i=0, n=Math.max(A.length,B.length); i<n; i++){
+          var x=A[i]||0, y=B[i]||0;
+          if(x!==y) return x-y;
+        }
+        return a.name.localeCompare(b.name,'de');
+      }
+      if(A) return -1;
+      if(B) return 1;
+      return a.name.localeCompare(b.name,'de');
+    });
+  }
+
+  function loadManifest(list){
+    found = [];
+    (list||[]).forEach(function(it){
+      if(!it) return;
+      var p = (typeof it==='string') ? it : (it.datei || it.name);
+      if(!p) return;
+      var titel = (typeof it==='object' && it.titel) ? it.titel : base(p);
+      var ber   = (typeof it==='object') ? it.bereich : null;
+      found.push(remote(p, titel, ber));
+    });
+  }
+
+  /* ---------- Bereichsauswahl ---------- */
+
+  // Nur Dokumente des gewaehlten Bereichs; "alle" zeigt sie zusammen.
+  function sichtbare(){
+    if(bereichAktiv==='alle') return found;
+    return found.filter(function(f){ return f.bereich===bereichAktiv; });
+  }
+
+  function bereichZaehler(){
+    var z={};
+    found.forEach(function(f){ z[f.bereich]=(z[f.bereich]||0)+1; });
+    return z;
+  }
+
+  // Umschalter aufbauen. Gibt es nur einen belegten Bereich, bleibt er
+  // verborgen - dann ist nichts umzuschalten.
+  function paintBereich(){
+    var z = bereichZaehler();
+    var mit = BEREICHE.filter(function(b){ return z[b.id]; });
+    if(mit.length < 2){
+      bereichSel.hidden = true; bereichSel.innerHTML='';
+      bereichAktiv = mit.length ? mit[0].id : STANDARD_BEREICH;
+      return;
+    }
+    if(bereichAktiv!=='alle' && !z[bereichAktiv]) bereichAktiv = mit[0].id;
+    bereichSel.hidden = false;
+    bereichSel.innerHTML = '';
+    mit.forEach(function(b){
+      var o=document.createElement('option');
+      o.value=b.id; o.textContent=b.titel+' ('+z[b.id]+')';
+      if(b.id===bereichAktiv) o.selected=true;
+      bereichSel.appendChild(o);
+    });
+    var oa=document.createElement('option');
+    oa.value='alle'; oa.textContent='Alle Bereiche ('+found.length+')';
+    if(bereichAktiv==='alle') oa.selected=true;
+    bereichSel.appendChild(oa);
+  }
+
+  bereichSel.addEventListener('change', function(){
+    bereichAktiv = bereichSel.value;
+    bereichMerken(bereichAktiv);
+    paintList();
+    // Gehoert das offene Dokument nicht zum neuen Bereich, das erste
+    // des Bereichs oeffnen - sonst zeigt der Kopf eine leere Auswahl.
+    var liste = sichtbare();
+    var offen = activePath ? ausListe(activePath) : null;
+    if(liste.length && (!offen || liste.indexOf(offen)<0)) openDoc(liste[0]);
+  });
+
+  // Ueber http(s) pruefen, ob die gelisteten Dateien wirklich da sind.
+  // Fehlende werden sofort sichtbar markiert, statt erst beim Klick zu scheitern.
+  function pruefen(){
+    if(isFile) return;
+    found.forEach(function(f){
+      if(f.local) return;
+      fetch(f.path, {method:'HEAD', cache:'no-store'})
+        .then(function(r){ if(!r.ok) f.fehlt=true; })
+        .catch(function(){ f.fehlt=true; })
+        .then(paintList);
+    });
+  }
+
+  function openDoc(f, rueckfall){
+    f.get().then(function(t){ render(t, f.name, f.path); }).catch(function(){
+      // Beim Start: laesst sich das gemerkte Dokument nicht laden, nimm den ersten.
+      if(rueckfall && rueckfall !== f){ openDoc(rueckfall); return; }
+      if(isFile && !f.local){
+        fail('<strong>'+f.name+'</strong> lässt sich per Doppelklick nicht laden — '+
+             'der Browser sperrt lokale Dateizugriffe.<br><br>'+
+             'Zieh den Ordner <code>aitm_daniel</code> in dieses Fenster (dann sind '+
+             'Coursebook und Bibliothek lesbar), oder starte im Ordner kurz einen Server:<br>'+
+             '<code>python -m http.server</code> und öffne '+
+             '<code>http://localhost:8000/coursebook/viewer.html</code>.');
+      } else if(/^\.\.\//.test(f.path)){
+        // Pfad fuehrt aus coursebook/ heraus. Zwei verschiedene Ursachen:
+        // lokal ein Server, der IN coursebook gestartet wurde; auf GitHub
+        // Pages dagegen Jekyll, das .md-Dateien MIT YAML-Kopf zu .html
+        // rendert und die rohe .md gar nicht erst veroeffentlicht.
+        var aufPages = /github\.io$/i.test(location.hostname);
+        fail('<strong>'+f.name+'</strong> ist unter <code>'+f.path+'</code> '+
+             'nicht erreichbar (404).<br><br>'+
+             (aufPages
+               ? 'Auf GitHub Pages ist die haeufigste Ursache <strong>Jekyll</strong>: '+
+                 'Markdown-Dateien mit YAML-Kopf werden zu <code>.html</code> gerendert, '+
+                 'die rohe <code>.md</code> wird nicht ausgeliefert. Abhilfe ist eine '+
+                 'leere Datei <code>.nojekyll</code> im Wurzelverzeichnis des Repos.'
+               : 'Lokal ist die haeufigste Ursache ein Server, der <em>in</em> '+
+                 '<code>coursebook</code> gestartet wurde. Starte ihn eine Ebene hoeher, '+
+                 'in <code>aitm_daniel</code>:<br>'+
+                 '<code>python -m http.server</code> und oeffne '+
+                 '<code>http://localhost:8000/coursebook/viewer.html</code>.<br>'+
+                 'Alternativ die Datei ueber „Ordner einlesen …" holen.'));
+      } else {
+        fail('<strong>'+f.name+'</strong> gibt es nicht (mehr).<br><br>'+
+             'Gesucht unter <code>'+f.path+'</code>. Entweder die Datei dorthin legen, '+
+             'oder den Eintrag aus <code>dateien.js</code> entfernen.');
+      }
+    });
+  }
+
+  // Auswahlfeld im Kopf, gespeist aus derselben Liste wie unten
+  function paintNav(){
+    var liste = sichtbare();
+    if(!liste.length){ nav.hidden=true; nav.innerHTML=''; return; }
+    nav.hidden=false;
+    nav.innerHTML='';
+    var ph=document.createElement('option');
+    ph.value=''; ph.textContent='Dokument wählen …'; ph.disabled=true;
+    if(!activePath) ph.selected=true;
+    nav.appendChild(ph);
+    var ziel=nav, letzterBereich=null;
+    liste.forEach(function(f){
+      // Bei "Alle Bereiche" die Dokumente nach Bereich gruppieren.
+      if(bereichAktiv==='alle' && f.bereich!==letzterBereich){
+        letzterBereich=f.bereich;
+        ziel=document.createElement('optgroup');
+        ziel.label=bereichTitel(f.bereich);
+        nav.appendChild(ziel);
+      }
+      var o=document.createElement('option');
+      o.value=f.path;
+      o.textContent=f.name + (f.fehlt ? '  (fehlt)' : (isFile && !f.local ? '  (gesperrt)' : ''));
+      if(f.path===activePath) o.selected=true;
+      ziel.appendChild(o);
+    });
+  }
+
+  nav.addEventListener('change', function(){
+    var ziel=nav.value; if(!ziel) return;
+    for(var i=0;i<found.length;i++){ if(found[i].path===ziel){ openDoc(found[i]); return; } }
+  });
+
+  function paintList(){
+    sortiere();
+    paintBereich();
+    paintNav();
+    filelist.innerHTML='';
+    if(!found.length){
+      filehint.innerHTML='Keine Dokumente eingetragen — in <code>dateien.js</code> ergänzen.';
+      return;
+    }
+    var liste = sichtbare();
+    var wo = (bereichAktiv==='alle') ? '' : ' im Bereich '+bereichTitel(bereichAktiv);
+    if(!liste.length){
+      filehint.innerHTML='Keine Dokumente'+wo+' — in <code>dateien.js</code> ergänzen '+
+        'oder oben einen anderen Bereich wählen.';
+      return;
+    }
+    var n = liste.length, lokal = liste.filter(function(f){ return f.local; }).length;
+    if(isFile && lokal < n){
+      filehint.innerHTML = n+' Dokument'+(n===1?'':'e')+' gelistet'+wo+
+        (lokal ? ', '+lokal+' davon eingelesen. ' : '. ')+
+        'Per Doppelklick geöffnet darf der Browser die übrigen nicht lesen — '+
+        'zieh den Ordner <code>aitm_daniel</code> hierher oder nutze „Ordner einlesen …".';
+    } else {
+      var fehlend = liste.filter(function(f){ return f.fehlt; });
+      var weg = fehlend.length;
+      var raus = fehlend.some(function(f){ return /^\.\.\//.test(f.path); });
+      filehint.innerHTML = n+' Dokument'+(n===1?'':'e')+wo+'.'+
+        (weg ? ' <span style="color:#d4574c">'+weg+' davon nicht gefunden — '+
+               (raus ? 'Pfade mit <code>../</code> erreicht der Server nur, wenn er in '+
+                       '<code>aitm_daniel</code> gestartet wurde (dann '+
+                       '<code>/coursebook/viewer.html</code> öffnen).'
+                     : 'Eintrag in <code>dateien.js</code> entfernen oder Datei ergänzen.')+
+               '</span>' : '');
+    }
+    var letzterBereich=null;
+    liste.forEach(function(f){
+      if(bereichAktiv==='alle' && f.bereich!==letzterBereich){
+        letzterBereich=f.bereich;
+        var kopf=document.createElement('li');
+        kopf.className='gruppe'; kopf.textContent=bereichTitel(f.bereich);
+        filelist.appendChild(kopf);
+      }
+      var li=document.createElement('li'), b=document.createElement('button');
+      b.className = (f.path===activePath) ? 'active' : '';
+      b.innerHTML = '<span><span class="nm"></span><span class="pt"></span></span>'+
+                    '<span class="sz"></span>';
+      b.querySelector('.nm').textContent=f.name;
+      b.querySelector('.pt').textContent=f.path;
+      var sz=b.querySelector('.sz');
+      if(f.fehlt){ sz.textContent='fehlt'; sz.style.color='#d4574c'; b.style.opacity='.6'; }
+      else if(f.size) sz.textContent=kb(f.size);
+      else if(isFile && !f.local) sz.textContent='gesperrt';
+      b.addEventListener('click', function(){ openDoc(f); });
+      li.appendChild(b); filelist.appendChild(li);
+    });
+  }
+
+  /* ---------- Einzeldatei ---------- */
+
+  document.getElementById('pick').addEventListener('click', function(){ file.click(); });
+  file.addEventListener('change', function(){
+    var f=file.files[0]; if(!f) return;
+    var e=merge(local(f)); paintList(); openDoc(e);
+  });
+
+  /* ---------- Ordner einlesen ---------- */
+
+  // Nach dem Einlesen: gehoeren die neuen Dateien zu genau einem Bereich,
+  // schaltet der Viewer dorthin um. So genuegt es, den Ordner bibliothek
+  // einzulesen, um in der Bibliothek zu landen.
+  function nachEinlesen(neue){
+    var ber = {};
+    neue.forEach(function(e){ if(e) ber[e.bereich]=1; });
+    var ids = Object.keys(ber);
+    if(ids.length===1 && bereichAktiv!=='alle' && ids[0]!==bereichAktiv){
+      bereichAktiv = ids[0]; bereichMerken(bereichAktiv);
+    }
+    paintList();
+    var liste = sichtbare();
+    var offen = activePath ? ausListe(activePath) : null;
+    if(!offen || liste.indexOf(offen)<0){
+      var erste = liste.filter(function(f){ return f.local; })[0] || liste[0];
+      if(erste) openDoc(erste);
+    }
+  }
+
+  document.getElementById('pickdir').addEventListener('click', function(){ dir.click(); });
+  dir.addEventListener('change', function(){
+    var neue=[];
+    Array.prototype.slice.call(dir.files).forEach(function(f){
+      if(isMd(f.name)) neue.push(merge(local(f, f.webkitRelativePath||f.name)));
+    });
+    if(!neue.length){
+      paintList();
+      filehint.textContent='In diesem Ordner wurden keine Markdown-Dateien gefunden.';
+      return;
+    }
+    nachEinlesen(neue);
+  });
+
+  /* ---------- Drag & Drop: Datei oder Ordner ---------- */
+
+  // sammel: Array, in das die erzeugten Eintraege gelegt werden, damit
+  // danach klar ist, welche Bereiche neu dazugekommen sind.
+  function walk(entry, prefix, depth, sammel){
+    if(depth>4) return Promise.resolve();
+    if(entry.isFile){
+      if(!isMd(entry.name)) return Promise.resolve();
+      return new Promise(function(res){
+        entry.file(function(f){
+          sammel.push(merge(local(f, prefix+entry.name))); res();
+        }, res);
+      });
+    }
+    if(entry.isDirectory){
+      var rdr=entry.createReader(), all=[];
+      return new Promise(function(res){
+        (function read(){
+          rdr.readEntries(function(batch){
+            if(!batch.length){
+              Promise.all(all.map(function(e){
+                return walk(e, prefix+entry.name+'/', depth+1, sammel);
+              })).then(res);
+              return;
+            }
+            all=all.concat(Array.prototype.slice.call(batch)); read();
+          }, res);
+        })();
+      });
+    }
+    return Promise.resolve();
+  }
+
+  ['dragenter','dragover'].forEach(function(e){
+    document.addEventListener(e, function(ev){ ev.preventDefault(); drop.classList.add('over'); });
+  });
+  ['dragleave','drop'].forEach(function(e){
+    document.addEventListener(e, function(ev){ ev.preventDefault(); drop.classList.remove('over'); });
+  });
+  document.addEventListener('drop', function(ev){
+    var dt=ev.dataTransfer; if(!dt) return;
+    var items=dt.items ? Array.prototype.slice.call(dt.items) : [];
+    var entries=items.map(function(i){ return i.webkitGetAsEntry && i.webkitGetAsEntry(); }).filter(Boolean);
+
+    if(entries.length){
+      var sammel=[];
+      Promise.all(entries.map(function(e){ return walk(e,'',0,sammel); })).then(function(){
+        if(!sammel.length){ paintList(); return; }
+        nachEinlesen(sammel);
+      });
+      return;
+    }
+    var f=dt.files && dt.files[0];
+    if(f){ var e=merge(local(f)); nachEinlesen([e]); }
+  });
+
+  /* ---------- Start ---------- */
+
+  // Zuletzt gelesenes Dokument oeffnen; gibt es keins oder laesst es sich
+  // nicht laden, den ersten Eintrag der Liste.
+  function startDokument(){
+    if(isFile || activePath || !found.length) return;
+    // 1. Adresse (geteilter Link), 2. zuletzt gelesen, 3. erster Eintrag
+    // des gewaehlten Bereichs
+    if(folgeHash(location.hash)) return;
+    var erste = sichtbare()[0] || found[0];
+    var wunsch = gemerkt(), ziel = wunsch ? ausListe(wunsch) : null;
+    if(ziel && ziel !== erste) openDoc(ziel, erste);
+    else openDoc(erste);
+  }
+
+  // Zuletzt gewaehlter Bereich. Steht er nicht in BEREICHE (Eintrag
+  // umbenannt oder entfernt), bleibt der Standardbereich.
+  (function(){
+    var b = bereichGemerkt();
+    if(b === 'alle' || (b && bereichDef(b))) bereichAktiv = b;
+  })();
+
+  var BUILD = '2026-09-03c';
+  document.getElementById('build').textContent = 'Viewer ' + BUILD;
+
+  // 1. Liste aus dateien.js, das als <script> geladen wurde. Funktioniert
+  //    ueberall, auch bei Doppelklick (file://), wo fetch gesperrt ist.
+  if(typeof DOKUMENTE === 'undefined'){
+    filehint.innerHTML = '<span style="color:#d4574c"><strong>dateien.js konnte nicht geladen werden.</strong> '+
+      'Liegt die Datei neben viewer.html? Bei einem Syntaxfehler darin steht die Ursache '+
+      'in der Browser-Konsole (F12).</span>';
+  } else {
+    loadManifest(DOKUMENTE);
+    paintList();
+    pruefen();
+    startDokument();
+  }
+
+  // 2. Ueber http(s) dateien.js zusaetzlich ungecacht nachladen. Ohne das
+  //    kann der Browser eine alte Fassung behalten, obwohl auf dem Server
+  //    laengst eine neue liegt. Aendert sich nichts, passiert auch nichts.
+  if(!isFile){
+    fetch('dateien.js?t=' + Date.now(), {cache:'no-store'})
+      .then(function(r){ if(!r.ok) throw 0; return r.text(); })
+      .then(function(txt){
+        var frisch = new Function(txt + '; return typeof DOKUMENTE!=="undefined" ? DOKUMENTE : null;')();
+        if(!frisch || !frisch.length) return;
+        // Reihenfolge-unabhaengig vergleichen: found ist sortiert, das
+        // Manifest nicht - sonst gilt jede Liste als geaendert.
+        var alt = found.map(function(f){ return f.path+'#'+f.bereich; }).sort().join('|');
+        var neu = frisch.map(function(it){
+          var p = (typeof it==='string') ? it : (it.datei||it.name);
+          return p+'#'+bereichVon(p, (typeof it==='object') ? it.bereich : null);
+        }).sort().join('|');
+        if(alt === neu) return;                       // nichts geaendert
+        loadManifest(frisch); paintList(); pruefen();
+        startDokument();
+      })
+      .catch(function(){ /* egal: die Liste aus dem <script> steht bereits */ });
+  }
+
+})();
+</script>
+</body>
+</html>
