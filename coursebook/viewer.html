@@ -648,9 +648,27 @@
     return z;
   }
 
+  // Ein Neuaufbau waehrend einer offenen Auswahlliste schliesst sie. Steht der
+  // Nutzer gerade an einem der beiden Selects, wird es nicht angefasst - der
+  // Neuaufbau wird nachgeholt, sobald er es verlaesst.
+  var nachzuholen = false;
+
+  function inBenutzung(el){
+    return document.activeElement === el;
+  }
+
+  function nachholen(){
+    if(!nachzuholen) return;
+    nachzuholen = false;
+    paintList();
+  }
+  nav.addEventListener('blur', nachholen);
+  bereichSel.addEventListener('blur', nachholen);
+
   // Umschalter aufbauen. Gibt es nur einen belegten Bereich, bleibt er
   // verborgen - dann ist nichts umzuschalten.
   function paintBereich(){
+    if(inBenutzung(bereichSel)){ nachzuholen = true; return; }
     var z = bereichZaehler();
     var mit = BEREICHE.filter(function(b){ return z[b.id]; });
     if(mit.length < 2){
@@ -686,6 +704,17 @@
 
   // Ueber http(s) pruefen, ob die gelisteten Dateien wirklich da sind.
   // Fehlende werden sofort sichtbar markiert, statt erst beim Klick zu scheitern.
+  // Eine HEAD-Abfrage je Dokument - bei rund 90 Dokumenten also rund 90.
+  // Frueher malte JEDE einzelne die Liste neu, und jedes Neumalen baute beide
+  // Auswahlfelder von Grund auf. Wer in diesem Moment eine Liste offen hatte,
+  // sah sie zuklappen: die Auswahl ging nur noch mit gedrueckter Maustaste.
+  // Jetzt werden die Ergebnisse gesammelt und hoechstens alle 250 ms gemalt.
+  var malTimer = null;
+  function malenGebuendelt(){
+    if(malTimer) return;
+    malTimer = setTimeout(function(){ malTimer = null; paintList(); }, 250);
+  }
+
   function pruefen(){
     if(isFile) return;
     found.forEach(function(f){
@@ -693,7 +722,7 @@
       fetch(f.path, {method:'HEAD', cache:'no-store'})
         .then(function(r){ if(!r.ok) f.fehlt=true; })
         .catch(function(){ f.fehlt=true; })
-        .then(paintList);
+        .then(malenGebuendelt);
     });
   }
 
@@ -737,6 +766,7 @@
 
   // Auswahlfeld im Kopf, gespeist aus derselben Liste wie unten
   function paintNav(){
+    if(inBenutzung(nav)){ nachzuholen = true; return; }
     var liste = sichtbare();
     if(!liste.length){ nav.hidden=true; nav.innerHTML=''; return; }
     nav.hidden=false;
