@@ -180,6 +180,15 @@ var DOKUMENTE = [
     titel: "EU AI Act · Verordnung (EU) 2024/1689",
     bereich: "bibliothek" },
 
+  { datei: "../bibliothek/wp-lhind-responsible-ai.md",
+    titel: "WP · Responsible AI (LHIND) — zwei Fehler, beide einschlägig" },
+
+  { datei: "../bibliothek/wp-lhind-agentic-ai.md",
+    titel: "WP · Agentic AI (LHIND) — drei Phasen, drei Voraussetzungen" },
+
+  { datei: "../bibliothek/wp-lhind-retail-digital.md",
+    titel: "WP · Retail Digital (LHIND) — branchenfremd, begründet abgelegt" },
+
   /* ================= ARTEFAKTE =================
      Eigene Arbeitsergebnisse aus ../artefakte/.
      Der folgende Block wird von coursetools/inhalt-bauen.py erzeugt.  */

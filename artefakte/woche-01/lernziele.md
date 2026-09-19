@@ -17,7 +17,7 @@ Jedes Lernziel braucht ein Artefakt, an dem es sichtbar wird — sonst lässt es
 
 ## Bezug zum Vorhaben
 
-*Welches der offenen Themen aus [`kontext/vorhaben.md`](../../kontext/vorhaben.md) — Reifegradvalidierung, Business Case, technischer Vergleich, Kontrollkonzept — bringt mich diese Woche weiter?*
+*Welches der offenen Themen aus `kontext/vorhaben.md` *(nicht oeffentlich: `vorhaben.md`)* — Reifegradvalidierung, Business Case, technischer Vergleich, Kontrollkonzept — bringt mich diese Woche weiter?*
 
 ## Reflexion am Wochenende
 

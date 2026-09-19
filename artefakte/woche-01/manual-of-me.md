@@ -9,7 +9,7 @@ status: Gerüst, von mir auszufüllen
 
 Eine Gebrauchsanweisung für die Zusammenarbeit mit mir. Kein Persönlichkeitsprofil, sondern das, was Kolleginnen und Kollegen praktisch weiterhilft.
 
-Grundlage: [`kontext/person.md`](../../kontext/person.md) — Rolle, Sprache und Arbeitsprinzipien nicht wiederholen, sondern hier um das Verhalten in der Zusammenarbeit ergänzen.
+Grundlage: `kontext/person.md` *(nicht oeffentlich: `person.md`)* — Rolle, Sprache und Arbeitsprinzipien nicht wiederholen, sondern hier um das Verhalten in der Zusammenarbeit ergänzen.
 
 ## Wie ich arbeite
 

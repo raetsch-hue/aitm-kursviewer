@@ -10,7 +10,7 @@ bezug: kontext/vorhaben.md
 
 Die eigene Empfehlung gegen sich selbst geprüft. Ziel ist nicht, den Pilot zu verhindern, sondern ihn nur dann zu befürworten, wenn er diese Einwände übersteht.
 
-Empfehlung, gegen die hier argumentiert wird: begrenzter RPA-Pilot für standardisierte Änderungsmitteilungen ([`kontext/vorhaben.md`](../../kontext/vorhaben.md)).
+Empfehlung, gegen die hier argumentiert wird: begrenzter RPA-Pilot für standardisierte Änderungsmitteilungen (`kontext/vorhaben.md` *(nicht oeffentlich: `vorhaben.md`)*).
 
 ## Einwand 1 — Die Entscheidungsgrundlage trägt nicht
 
@@ -38,7 +38,7 @@ Automatisierung macht den bestehenden Ablauf dauerhaft. Wenn der Prozess selbst 
 
 ## Einwand 5 — Ohne Business Case ist die Freigabe nicht darstellbar
 
-Fallzahlen, Entwicklungs-, Lizenz- und Betriebskosten sowie Amortisationszeit fehlen. Die Finanzleitung wird ohne diese Zahlen nicht zustimmen ([`kontext/stakeholder.md`](../../kontext/stakeholder.md)) — und das zu Recht.
+Fallzahlen, Entwicklungs-, Lizenz- und Betriebskosten sowie Amortisationszeit fehlen. Die Finanzleitung wird ohne diese Zahlen nicht zustimmen (`kontext/stakeholder.md` *(nicht oeffentlich: `stakeholder.md`)*) — und das zu Recht.
 
 *Was den Einwand entkräften würde:*
 
