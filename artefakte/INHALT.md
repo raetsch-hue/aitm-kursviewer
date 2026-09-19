@@ -267,4 +267,4 @@ Alle Dokumente unterhalb von `artefakte/`, aufgeschlüsselt bis zur dritten Übe
 
 ---
 
-*Erzeugt am 2026-09-18 aus 14 Dokumenten. Neu erzeugen: `python coursetools/inhalt-bauen.py`*
+*Erzeugt am 2026-09-18 aus 15 Dokumenten. Neu erzeugen: `python coursetools/inhalt-bauen.py`*

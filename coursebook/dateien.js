@@ -116,6 +116,25 @@ var DOKUMENTE = [
   { datei: "woche-4/4.5/4.5_Synthese-Stakeholder-Management-Plan.md",
     titel: "4.5 · Synthese: Stakeholder-Management-Plan" },
 
+  // ---- Woche 5 ----
+  { datei: "woche-5/5.0/5.0_Essentials-Woche-5.md",
+    titel: "5.0 · Essentials: Woche 5 komplett" },
+
+  { datei: "woche-5/5.1/5.1_Risikoklassen-und-Annex-III.md",
+    titel: "5.1 · Risikoklassen und Annex III" },
+
+  { datei: "woche-5/5.2/5.2_ISO-42001-und-Governance-Rollen.md",
+    titel: "5.2 · ISO 42001 und Governance-Rollen" },
+
+  { datei: "woche-5/5.3/5.3_Career-Day-Spike-Day-und-die-Lektuere.md",
+    titel: "5.3 · Career Day, Spike Day und die Lektüre" },
+
+  { datei: "woche-5/5.4/5.4_Compliance-Audit-Simulation.md",
+    titel: "5.4 · Compliance Audit Simulation" },
+
+  { datei: "woche-5/5.5/5.5_Synthese-Governance-Framework.md",
+    titel: "5.5 · Synthese: Das Governance Framework" },
+
   /* ================= BIBLIOTHEK =================
      Eigene Nachschlage-Einträge aus ../bibliothek/.
      Pfad beginnt mit ../ , weil viewer.html in coursebook/ liegt.
@@ -149,11 +168,23 @@ var DOKUMENTE = [
     titel: "Botschaftsarchitektur & Kanalstrategie",
     bereich: "bibliothek" },
 
+  { datei: "../bibliothek/pmi-13-2-stakeholder-engagement.md",
+    titel: "PMI 13.2 · Plan Stakeholder Engagement",
+    bereich: "bibliothek" },
+
+  { datei: "../bibliothek/iso-42001.md",
+    titel: "ISO/IEC 42001 · KI-Managementsystem",
+    bereich: "bibliothek" },
+
+  { datei: "../bibliothek/eu-ai-act.md",
+    titel: "EU AI Act · Verordnung (EU) 2024/1689",
+    bereich: "bibliothek" },
+
   /* ================= ARTEFAKTE =================
      Eigene Arbeitsergebnisse aus ../artefakte/.
      Der folgende Block wird von coursetools/inhalt-bauen.py erzeugt.  */
 
-  /* >>> ARTEFAKTE-ANFANG (15 Dokumente, 2026-09-18)
+  /* >>> ARTEFAKTE-ANFANG (16 Dokumente, 2026-09-18)
       Automatisch erzeugt von coursetools/inhalt-bauen.py.
       Nicht von Hand aendern - Aenderungen gehen beim naechsten Lauf
       verloren. Anzeigetitel stellt man im Skript unter TITEL ein.  */

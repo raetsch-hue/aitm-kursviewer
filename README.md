@@ -20,7 +20,7 @@ oeffentlichen Arbeitsstand.
 
 **Herausgenommen wurde:**
 
-- 1 Dokument(e) vollstaendig. Sie wenden eine Methode auf den
+- 2 Dokument(e) vollstaendig. Sie wenden eine Methode auf den
   Uebungsfall an und nennen dabei generierte Zahlen zu einer realen Firma
 - `coursebook/woche-1/1.5/1.5_Ergaenzung-Bias-und-Pruefschemen.md`: der Abschnitt *7. Anwendung auf den eigenen Fall*. **An seiner Stelle steht ein Hinweis** — der uebrige Text ist firmenunabhaengig und vollstaendig
 - `coursebook/woche-1/1.5/1.5_Ergaenzung-Evals-Woher-man-weiss-dass-es-funktioniert.md`: der Abschnitt *8. Anwendung auf den eigenen Fall*. **An seiner Stelle steht ein Hinweis** — der uebrige Text ist firmenunabhaengig und vollstaendig
@@ -35,4 +35,4 @@ vom Autor dieses Repositories. Eigene Arbeit sind `artefakte/`,
 `bibliothek/`, `lerntagebuch/` und die als *Ergaenzung* benannten
 Dateien im Coursebook.
 
-Erzeugt am 2026-09-18.
+Erzeugt am 2026-09-19.
