@@ -1,10 +1,10 @@
 ---
 artefakt: Prüfungsplan — rechtliche Anforderungen an Daten- und KI-Integration
 datum: 2026-09-20
-status: **erste Fassung.** Sieben Rechtsakte belegt, vier Lücken offen benannt
+status: **zweite Fassung.** 39 Prüfpunkte in sieben Rechtsgebieten, fünf Lücken offen benannt
 zweck: die rechtlichen Anforderungen in prüfbare Punkte zerlegen — je Punkt Rechtsgrundlage, Auslöser, Nachweis
 geltung: **firmenunabhängig.** Kein Fallwert, kein Mandantenbezug
-herkunft: **[Sekundär].** Alle Fundstellen über öffentliche Aufbereitungen belegt, Abrufdatum 2026-09-20. **Kein Rechtsakt im Volltext am Amtsblatt geprüft.** Keine Quelle stammt aus dem Kursmaterial
+herkunft: **überwiegend [Sekundär].** Fundstellen über öffentliche Aufbereitungen belegt, Abrufdatum 2026-09-20. **Ausnahme:** § 15 AGG und § 61b ArbGG sind am amtlichen Volltext gelesen. **Kein Unionsrechtsakt im Volltext am Amtsblatt geprüft.** Keine Quelle stammt aus dem Kursmaterial
 vorbehalt: Keine Rechtsberatung. Ordnet, entscheidet nicht
 ---
 
@@ -13,7 +13,8 @@ vorbehalt: Keine Rechtsberatung. Ordnet, entscheidet nicht
 > **Belegstatus vorweg.** Jeder Prüfpunkt nennt **Rechtsakt und Fundstelle**. Die Datumsangaben und
 > Verordnungsnummern sind am **20.09.2026** über öffentliche Aufbereitungen belegt und **nicht am
 > Amtsblatt im Volltext verifiziert** — wer daraus eine Entscheidung ableitet, prüft die Fundstelle
-> nach. **Keine Quelle stammt aus dem Kursmaterial:** Ein Kurs referiert Recht, er setzt es nicht,
+> nach. **Zwei Ausnahmen:** § 15 AGG und § 61b ArbGG (Prüfpunkt 1.6) sind am amtlichen Volltext
+> gelesen und als **[Primär]** gekennzeichnet. **Keine Quelle stammt aus dem Kursmaterial:** Ein Kurs referiert Recht, er setzt es nicht,
 > und `coursebook/woche-5/5.0` führt selbst drei Korrekturen an seinem eigenen Material.
 
 ## Wie dieser Plan benutzt wird
@@ -55,13 +56,35 @@ ergänzend BDSG · für Endgeräte­zugriffe TDDDG.
 | **1.3** | **Datenschutz-Folgenabschätzung**, wenn die Verarbeitung voraussichtlich hohes Risiko birgt | Art. 35 DSGVO | DSFA-Dokument, vor Inbetriebnahme |
 | **1.4** | **Meldung von Verletzungen** binnen 72 Stunden an die Aufsicht, ggf. an Betroffene | Art. 33, 34 DSGVO | Meldeprozess mit benannter Rolle und Erreichbarkeit |
 | **1.5** | **Betroffenenrechte** technisch erfüllbar: Auskunft, Berichtigung, Löschung, Widerspruch | Art. 15–21 DSGVO | Nachweisbare Löschung, nicht nur Löschkonzept |
-| **1.6** | **Besondere Kategorien** nur auf tragfähiger Grundlage | Art. 9 DSGVO | Gesonderte Prüfung, dokumentiert |
-| **1.7** | **Automatisierte Einzelentscheidung** mit rechtlicher Wirkung nur unter engen Bedingungen | Art. 22 DSGVO | Nachweis menschlicher Beteiligung, die die Entscheidung **ändern kann** |
-| **1.8** | **Zugriff auf Endgeräte** (Cookies, Tracking) nur mit Einwilligung | § 25 TDDDG | Einwilligungsnachweis |
+| **1.6** | **Aufbewahrungsmatrix liegt vor, bevor gelöscht wird** — je Datenart: Zweck, Frist, Rechtsgrund, und was nach Fristende geschieht | Art. 17 Abs. 3 lit. b und lit. e DSGVO · § 15 Abs. 4 AGG · § 61b Abs. 1 ArbGG | **Eine Matrix, kein Satz.** Je Datenart eine Zeile; Löschen **oder** Sperren ist je Zeile entschieden, nicht pauschal |
+| **1.7** | **Besondere Kategorien** nur auf tragfähiger Grundlage | Art. 9 DSGVO | Gesonderte Prüfung, dokumentiert |
+| **1.8** | **Automatisierte Einzelentscheidung** mit rechtlicher Wirkung nur unter engen Bedingungen | Art. 22 DSGVO | Nachweis menschlicher Beteiligung, die die Entscheidung **ändern kann** |
+| **1.9** | **Zugriff auf Endgeräte** (Cookies, Tracking) nur mit Einwilligung | § 25 TDDDG | Einwilligungsnachweis |
 
-> **Der Punkt, an dem KI-Projekte am häufigsten scheitern, ist 1.7 — nicht 1.3.** Art. 22 verlangt
+> **Der Punkt, an dem KI-Projekte am häufigsten scheitern, ist 1.8 — nicht 1.3.** Art. 22 verlangt
 > keine Beteiligung, sondern eine **wirksame**. Ein Mensch, der bestätigt, ist keine Beteiligung;
 > ein Mensch, der die Reihenfolge ändern kann, ist eine.
+
+> **1.5 und 1.6 gehören zusammen, und 1.6 kommt zuerst.** 1.5 verlangt, dass gelöscht werden
+> *kann*. 1.6 verlangt zu wissen, **was nicht gelöscht werden darf** — und das ist der Punkt, an dem
+> ein sauber abgearbeiteter Plan Schaden anrichtet: Wer die Betroffenenrechte technisch scharf
+> stellt, ohne die Aufbewahrungsfristen daneben zu legen, löscht rechtmäßig genau die Unterlagen weg,
+> mit denen er sich später verteidigen müsste. **Art. 17 Abs. 3 lit. e** nimmt die Geltendmachung und
+> Verteidigung von Rechtsansprüchen vom Löschanspruch aus; **lit. b** tut dasselbe für gesetzliche
+> Aufbewahrungspflichten — dort ist die Folge **Sperren statt Löschen**, nicht Löschen.
+>
+> Die Fristen dafür stehen nicht in der DSGVO, sondern im Fachrecht. Beispiel Bewerbungsunterlagen:
+> **§ 15 Abs. 4 AGG** gibt zwei Monate für die schriftliche Geltendmachung eines
+> Entschädigungsanspruchs, **§ 61b Abs. 1 ArbGG** danach drei Monate für die Klage — daraus folgt die
+> in der Praxis übliche Aufbewahrung von **rund sechs Monaten** (zwei plus drei plus Zustellpuffer).
+> Die sechs Monate sind eine **Ableitung aus zwei Fristen**, keine im Gesetz genannte Zahl; wer sie
+> übernimmt, übernimmt die Ableitung mit. Andere Datenarten haben andere Fristen — deshalb Matrix.
+
+**Belegt für 1.6 über:** **[Primär]** [gesetze-im-internet.de · § 15 AGG](https://www.gesetze-im-internet.de/agg/__15.html) ·
+[gesetze-im-internet.de · § 61b ArbGG](https://www.gesetze-im-internet.de/arbgg/__61b.html) — beide am amtlichen Volltext gelesen, die Zwei- und die Drei-Monats-Frist stehen dort wörtlich.
+**[Sekundär]** [datenschutz-grundverordnung.eu · Art. 17](https://datenschutz-grundverordnung.eu/dsgvo/art-17-dsgvo-recht-auf-loeschung-recht-auf-vergessenwerden/) ·
+[dr-datenschutz.de · Löschpflicht und Verjährungsfristen](https://www.dr-datenschutz.de/loeschpflicht-und-verjaehrungsfristen/) ·
+[dr-datenschutz.de · Aufbewahrungsfrist Bewerbungen](https://www.dr-datenschutz.de/aufbewahrungsfrist-wann-sind-bewerbungen-zu-loeschen/) — Abruf 20.09.2026.
 
 ---
 
@@ -243,17 +266,19 @@ nicht abschließend geklärt. **Praktisch heißt das: beide erfüllen, nicht ein
 
 | | Was fehlt | Warum es zählt |
 |---:|---|---|
-| **L1** | **Kein Rechtsakt im Volltext am Amtsblatt geprüft.** Alle Daten und Nummern stammen aus Sekundärquellen | Eine falsche Verordnungsnummer macht jeden Verweis wertlos |
+| **L1** | **Kein Unionsrechtsakt im Volltext am Amtsblatt geprüft.** Daten und Nummern stammen aus Sekundärquellen — **außer** § 15 AGG und § 61b ArbGG, die am amtlichen Volltext gelesen sind | Eine falsche Verordnungsnummer macht jeden Verweis wertlos |
 | **L2** | **Abschnitt 6** (Urheberrecht, Geschäftsgeheimnisse) ist nicht auf demselben Stand belegt wie 2 bis 5 | Trainingsdaten sind der Punkt, an dem Modellprojekte rechtlich am häufigsten kippen |
 | **L3** | **Data Governance Act** (VO (EU) 2022/868) ist **nicht aufgenommen** | Er regelt Datenmittler und Datenaltruismus — relevant, sobald Daten Dritter einbezogen werden |
 | **L4** | **Der Rückzug der KI-Haftungsrichtlinie** ist nur über die Repository-eigene Quellenlage belegt | Teil C ① steht und fällt damit |
-| **L5** | **Elf der zwölf Fundstellen wurden am 20.09.2026 maschinell auf Erreichbarkeit geprüft** (HTTP 200), die zwölfte blockt Automaten | Eine tote Fundstelle ist keine Fundstelle — der Test gehört wiederholt, nicht einmal gemacht |
+| **L5** | **Fünfzehn der sechzehn Fundstellen wurden am 20.09.2026 maschinell auf Erreichbarkeit geprüft** (HTTP 200), die sechzehnte blockt Automaten | Eine tote Fundstelle ist keine Fundstelle — der Test gehört wiederholt, nicht einmal gemacht |
 
 ## Änderungsvermerk
 
 | Datum | Was | Warum |
 |---|---|---|
 | 2026-09-20 | Erstfassung. Sieben Rechtsakte belegt, vier Lücken benannt | Der Kurs behandelt Recht, setzt es aber nicht — ein Prüfraster muss aus den Rechtsakten kommen |
+| 2026-09-20 | **Prüfpunkt 1.6 (Aufbewahrungsmatrix) neu**, alt 1.6–1.8 zu 1.7–1.9 umnummeriert. Abschnitt 1 hat neun statt acht Punkte, der Plan 39 statt 38 | Der Plan verlangte in 1.5 nachweisbare Löschung, ohne zu verlangen zu wissen, **was nicht gelöscht werden darf**. Das war die einzige Stelle, an der korrektes Abarbeiten Schaden anrichtet — Beweismittel weg, Anspruch trotzdem da. Gefunden bei der Anwendung auf einen Fall, nicht bei der Erstfassung |
+| 2026-09-20 | Frontmatter zählt jetzt **Prüfpunkte und Rechtsgebiete**, nicht mehr *„sieben Rechtsakte“* | Die alte Angabe war nicht nachzählbar: der Plan nennt in sieben Abschnitten mehr als sieben Rechtsakte (allein Abschnitt 1 vier). Eine Zahl, die man nicht nachzählen kann, gehört nicht ins Frontmatter |
 
 ## Empfehlung
 
