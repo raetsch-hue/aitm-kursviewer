@@ -1,6 +1,6 @@
 ---
 artefakt: Inhaltsverzeichnis
-stand: 2026-09-18
+stand: 2026-09-20
 status: automatisch erzeugt von coursetools/inhalt-bauen.py
 zweck: alle Themen der Artefakte an einer Stelle, mit Sprung zur Überschrift
 ---
@@ -26,6 +26,7 @@ Alle Dokumente unterhalb von `artefakte/`, aufgeschlüsselt bis zur dritten Übe
 | [Extra · 1 Modelle und Verfahren, die nur genannt wurden](#artefakte/extra/01_modelle-und-verfahren.md) | 2026-09-03 | 10 |
 | [Extra · 2 Zahlen und Befunde, die nicht behandelt wurden](#artefakte/extra/02_zahlen-und-befunde.md) | 2026-09-03 | 9 |
 | [Extra · 3 Spannungen und blinde Flecken](#artefakte/extra/03_spannungen-und-blinde-flecken.md) | 2026-09-03 | 12 |
+| [Woche 05 · Fragenkatalog für den ganzen Kurs — eine tragende Frage je Kapitel, mit Antwort in Stichpunkten](#artefakte/woche-05/5.1-fragen-je-kapitel.md) | 2026-09-20 | 46 |
 
 ---
 
@@ -265,6 +266,61 @@ Alle Dokumente unterhalb von `artefakte/`, aufgeschlüsselt bis zur dritten Übe
 - [B5. Was passiert, wenn das Modell selbst der Gegenstand des Widerstands ist \[ergänzt\]](#artefakte/extra/03_spannungen-und-blinde-flecken.md#b5-was-passiert-wenn-das-modell-selbst-der-gegenstand-des-widerstands-ist-ergänzt)
 - [B6. Die Grenze des Merksatzes \[Verweis\]](#artefakte/extra/03_spannungen-und-blinde-flecken.md#b6-die-grenze-des-merksatzes-verweis)
 
+## woche-05
+
+### [Woche 05 · Fragenkatalog für den ganzen Kurs — eine tragende Frage je Kapitel, mit Antwort in Stichpunkten](#artefakte/woche-05/5.1-fragen-je-kapitel.md)
+
+*je Kapitel eine Frage, die den Kurs voranbringt statt Verständnis abzufragen — mit der eigenen Antwort daneben, damit keine Frage gestellt wird, die ich selbst nicht beantworten könnte*
+
+`artefakte/woche-05/5.1-fragen-je-kapitel.md` · Stand 2026-09-20
+
+- [Wie geprüft wurde, ob eine Frage taugt](#artefakte/woche-05/5.1-fragen-je-kapitel.md#wie-geprüft-wurde-ob-eine-frage-taugt)
+- [1. Montag zuerst — drei aus dreißig](#artefakte/woche-05/5.1-fragen-je-kapitel.md#1-montag-zuerst--drei-aus-dreißig)
+- [2. Querschnitt — zwei Fragen, die für den ganzen Kurs gelten](#artefakte/woche-05/5.1-fragen-je-kapitel.md#2-querschnitt--zwei-fragen-die-für-den-ganzen-kurs-gelten)
+  - [2.1 Die Skala, die dreimal fehlt](#artefakte/woche-05/5.1-fragen-je-kapitel.md#21-die-skala-die-dreimal-fehlt)
+  - [2.2 Warum die Zahlen reihenweise nicht halten](#artefakte/woche-05/5.1-fragen-je-kapitel.md#22-warum-die-zahlen-reihenweise-nicht-halten)
+- [3. Woche 1 — Einordnung, Prompting, Prüfung](#artefakte/woche-05/5.1-fragen-je-kapitel.md#3-woche-1--einordnung-prompting-prüfung)
+  - [3.1 · Tag 1.4 — Vier Wellen, KI-Kategorien, Hype Cycle](#artefakte/woche-05/5.1-fragen-je-kapitel.md#31-·-tag-14--vier-wellen-ki-kategorien-hype-cycle)
+  - [3.2 · Tag 1.5 — Strategisches Prompt Engineering](#artefakte/woche-05/5.1-fragen-je-kapitel.md#32-·-tag-15--strategisches-prompt-engineering)
+  - [3.3 · Ergänzung zu 1.5 — Bias und Prüfschemen](#artefakte/woche-05/5.1-fragen-je-kapitel.md#33-·-ergänzung-zu-15--bias-und-prüfschemen)
+  - [3.4 · Ergänzung zu 1.5 — Evals](#artefakte/woche-05/5.1-fragen-je-kapitel.md#34-·-ergänzung-zu-15--evals)
+- [4. Woche 2 — Veränderung, Kräfte, Widerstand](#artefakte/woche-05/5.1-fragen-je-kapitel.md#4-woche-2--veränderung-kräfte-widerstand)
+  - [4.1 · Tag 2.1 — Lewin und ADKAR](#artefakte/woche-05/5.1-fragen-je-kapitel.md#41-·-tag-21--lewin-und-adkar)
+  - [4.2 · Tag 2.2 — Kotters 8 Schritte](#artefakte/woche-05/5.1-fragen-je-kapitel.md#42-·-tag-22--kotters-8-schritte)
+  - [4.3 · Ergänzung zu 2.2 — Force-Field-Analyse](#artefakte/woche-05/5.1-fragen-je-kapitel.md#43-·-ergänzung-zu-22--force-field-analyse)
+  - [4.4 · Tag 2.3 — Kräfte sichtbar machen](#artefakte/woche-05/5.1-fragen-je-kapitel.md#44-·-tag-23--kräfte-sichtbar-machen)
+  - [4.5 · Tag 2.4 — Widerstand ist eine Information](#artefakte/woche-05/5.1-fragen-je-kapitel.md#45-·-tag-24--widerstand-ist-eine-information)
+  - [4.6 · Tag 2.5 — Die Woche wird ein Plan](#artefakte/woche-05/5.1-fragen-je-kapitel.md#46-·-tag-25--die-woche-wird-ein-plan)
+- [5. Woche 3 — Plattform, Daten, Umsetzung](#artefakte/woche-05/5.1-fragen-je-kapitel.md#5-woche-3--plattform-daten-umsetzung)
+  - [5.1 · Tag 3.1 — KI-Plattformen im Vergleich](#artefakte/woche-05/5.1-fragen-je-kapitel.md#51-·-tag-31--ki-plattformen-im-vergleich)
+  - [5.2 · Tag 3.2 — Data Governance und RAG](#artefakte/woche-05/5.1-fragen-je-kapitel.md#52-·-tag-32--data-governance-und-rag)
+  - [5.3 · Tag 3.3 — Implementierungspfade und Reifegrade](#artefakte/woche-05/5.1-fragen-je-kapitel.md#53-·-tag-33--implementierungspfade-und-reifegrade)
+  - [5.4 · Tag 3.4 — Die Entscheidung vertreten](#artefakte/woche-05/5.1-fragen-je-kapitel.md#54-·-tag-34--die-entscheidung-vertreten)
+  - [5.5 · Tag 3.5 — Synthese Woche 3](#artefakte/woche-05/5.1-fragen-je-kapitel.md#55-·-tag-35--synthese-woche-3)
+- [6. Woche 4 — Stakeholder, Champions, Botschaft, Briefing](#artefakte/woche-05/5.1-fragen-je-kapitel.md#6-woche-4--stakeholder-champions-botschaft-briefing)
+  - [6.1 · Tag 4.1 — Stakeholder-Analyse und Power/Interest-Grid](#artefakte/woche-05/5.1-fragen-je-kapitel.md#61-·-tag-41--stakeholder-analyse-und-powerinterest-grid)
+  - [6.2 · Tag 4.1 — Die Frist, die vor der Mitbestimmung liegt](#artefakte/woche-05/5.1-fragen-je-kapitel.md#62-·-tag-41--die-frist-die-vor-der-mitbestimmung-liegt)
+  - [6.3 · Tag 4.2 — Key User und Champions](#artefakte/woche-05/5.1-fragen-je-kapitel.md#63-·-tag-42--key-user-und-champions)
+  - [6.4 · Tag 4.3 — Botschaft, Kanal, Kommunikationsplan](#artefakte/woche-05/5.1-fragen-je-kapitel.md#64-·-tag-43--botschaft-kanal-kommunikationsplan)
+  - [6.5 · Tag 4.4 — Executive Briefing](#artefakte/woche-05/5.1-fragen-je-kapitel.md#65-·-tag-44--executive-briefing)
+  - [6.6 · Tag 4.5 — Synthese: der Stakeholder-Management-Plan](#artefakte/woche-05/5.1-fragen-je-kapitel.md#66-·-tag-45--synthese-der-stakeholder-management-plan)
+- [7. Woche 5 — Governance, Recht, Audit](#artefakte/woche-05/5.1-fragen-je-kapitel.md#7-woche-5--governance-recht-audit)
+  - [7.1 Das Datum, das an vier Stellen falsch steht](#artefakte/woche-05/5.1-fragen-je-kapitel.md#71-das-datum-das-an-vier-stellen-falsch-steht)
+  - [7.2 · Tag 5.1 — Die Derogation und die Zahl, die niemand hat](#artefakte/woche-05/5.1-fragen-je-kapitel.md#72-·-tag-51--die-derogation-und-die-zahl-die-niemand-hat)
+  - [7.3 · Tag 5.1 — Der Tag richtet sich an Betreiber und handelt von Anbietern](#artefakte/woche-05/5.1-fragen-je-kapitel.md#73-·-tag-51--der-tag-richtet-sich-an-betreiber-und-handelt-von-anbietern)
+  - [7.4 · Tag 5.2 — Wer prüft den Konformitätsnachweis des Anbieters?](#artefakte/woche-05/5.1-fragen-je-kapitel.md#74-·-tag-52--wer-prüft-den-konformitätsnachweis-des-anbieters)
+  - [7.5 · Tag 5.2 — Zwei Kurstage, zwei Zahlen, dieselbe Norm](#artefakte/woche-05/5.1-fragen-je-kapitel.md#75-·-tag-52--zwei-kurstage-zwei-zahlen-dieselbe-norm)
+  - [7.6 · Tag 5.3 — Ein System, zwei Pflichtsets](#artefakte/woche-05/5.1-fragen-je-kapitel.md#76-·-tag-53--ein-system-zwei-pflichtsets)
+  - [7.7 · Tag 5.4 — Wer prüft uns zuerst?](#artefakte/woche-05/5.1-fragen-je-kapitel.md#77-·-tag-54--wer-prüft-uns-zuerst)
+  - [7.8 · Tag 5.5 — Das Dashboard ohne Eskalationsregel](#artefakte/woche-05/5.1-fragen-je-kapitel.md#78-·-tag-55--das-dashboard-ohne-eskalationsregel)
+  - [7.9 · Tag 5.5 — Was genau soll die Person tun, die Behavioral Drift erkennt?](#artefakte/woche-05/5.1-fragen-je-kapitel.md#79-·-tag-55--was-genau-soll-die-person-tun-die-behavioral-drift-erkennt)
+- [8. Was beim kritischen Durchgang gefallen ist](#artefakte/woche-05/5.1-fragen-je-kapitel.md#8-was-beim-kritischen-durchgang-gefallen-ist)
+  - [8.1 Durchgang 1 — was gar nicht erst hineingekommen ist](#artefakte/woche-05/5.1-fragen-je-kapitel.md#81-durchgang-1--was-gar-nicht-erst-hineingekommen-ist)
+  - [8.2 Durchgang 2 — was an der fertigen Fassung falsch war](#artefakte/woche-05/5.1-fragen-je-kapitel.md#82-durchgang-2--was-an-der-fertigen-fassung-falsch-war)
+- [9. Was dieses Dokument nicht leistet](#artefakte/woche-05/5.1-fragen-je-kapitel.md#9-was-dieses-dokument-nicht-leistet)
+- [Änderungsvermerk](#artefakte/woche-05/5.1-fragen-je-kapitel.md#änderungsvermerk)
+- [Empfehlung](#artefakte/woche-05/5.1-fragen-je-kapitel.md#empfehlung)
+
 ---
 
-*Erzeugt am 2026-09-18 aus 15 Dokumenten. Neu erzeugen: `python coursetools/inhalt-bauen.py`*
+*Erzeugt am 2026-09-20 aus 16 Dokumenten. Neu erzeugen: `python coursetools/inhalt-bauen.py`*
