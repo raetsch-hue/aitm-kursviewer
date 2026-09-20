@@ -54,7 +54,7 @@ Verordnung (EU) 2024/1689, in Kraft seit 01.08.2024, geändert durch den *Digita
 | **Quer dazu: GPAI** (Art. 51–55) | Universell einsetzbare Modelle, mit und ohne systemisches Risiko | Trifft Modellanbieter, nicht deren Anwender |
 
 > **Der häufigste Einordnungsfehler:** anzunehmen, die Klassen schlössen einander aus. Ein
-> Hochrisikosystem mit Menschkontakt trägt **zusätzlich** die Transparenzpflicht aus Art. 50 — und
+> Hochrisikosystem mit Menschkontakt liegt **zusätzlich** in der Transparenzspur des Art. 50 — und
 > die gilt seit 02.08.2026, während die Hochrisikopflichten verschoben wurden.
 
 **[öffentlich]** Die zwei neuen Verbote aus dem Omnibus — Erzeugung nicht einvernehmlicher intimer
@@ -271,7 +271,7 @@ hat eine Standardantwort.
 3. **Fällt der Zweck unter Art. 5?** Verboten ist verboten; hier endet die Prüfung.
 4. **Fällt der Zweck unter Anhang I oder III?** Wenn Anhang III: **Greift Art. 6 Abs. 3 — und können
    wir das vor Inbetriebnahme dokumentieren?**
-5. **Greift Art. 50 zusätzlich?** Menschkontakt, synthetische Inhalte, Emotionserkennung. Gilt heute,
+5. **Greift Art. 50 zusätzlich — und wen trifft er?** **Abs. 1 und 2 verpflichten den Anbieter** (Gestaltung, maschinenlesbare Kennzeichnung), **Abs. 3 und 4 den Betreiber** — letztere nur bei Emotionserkennung, biometrischer Kategorisierung, Deepfakes und Text zur Information der Öffentlichkeit über Angelegenheiten von öffentlichem Interesse. **Ein Betreiber, der ein eingekauftes System intern für Textarbeit nutzt, ist von Abs. 1 und 2 nicht unmittelbar verpflichtet.** Gilt heute,
    unabhängig von der Verschiebung.
 6. **Was gilt unabhängig vom AI Act?** DSGVO Art. 22 und 35, Mitbestimmung, AGG, Beschäftigtendaten.
    Diese Frage ist in der Praxis meist die teuerste.
@@ -289,7 +289,7 @@ hat eine Standardantwort.
    eingesetzt, und die Einordnung nach Art. 6 Abs. 3 ist **vor** Inbetriebnahme fällig — nachträglich
    geschrieben ist sie wertlos. Aufwand: eine halbe Seite je Vorhaben. Rolle: die Rechts- oder
    Datenschutzrolle gemeinsam mit der fachlich verantwortlichen.
-2. **Art. 4 und Art. 50 gegen den Ist-Stand prüfen.** Beide gelten heute, beide werden regelmäßig
+2. **Art. 4 und Art. 50 gegen den Ist-Stand prüfen — und bei Art. 50 zuerst den Adressaten.** Beide gelten heute, beide werden regelmäßig
    übersehen, weil die Aufmerksamkeit am Hochrisiko-Katalog hängt. Voraussetzung dafür, dass die
    Verschiebung auf 2027 nicht als Entwarnung gelesen wird.
 3. **Die Pflichten aus Abschnitt 5 als Nachweisanforderungen in jede Ausschreibung übernehmen.**

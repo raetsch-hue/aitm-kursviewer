@@ -104,7 +104,7 @@ ergänzend BDSG · für Endgeräte­zugriffe TDDDG.
 | **2.3** | **Ausnahme nach Art. 6 Abs. 3** dokumentiert, **bevor** das System in Betrieb geht | Art. 6 Abs. 3 | Dokumentierte Bewertung. **Anbieterpflicht** — als Vertragsbedingung verlangen, nicht selbst erstellen |
 | **2.4** | **Verbotene Praktiken** ausgeschlossen — u. a. Emotionserkennung am Arbeitsplatz und in Bildungseinrichtungen, Social Scoring | Art. 5 | Negativprüfung, dokumentiert |
 | **2.5** | **KI-Kompetenz** der Beschäftigten, die mit dem System arbeiten | Art. 4 | Schulungsnachweis. **Gilt seit 02.02.2025, unabhängig von der Risikoklasse** |
-| **2.6** | **Transparenz gegenüber Menschen**, die mit KI interagieren oder KI-Ausgaben erhalten | Art. 50 | Hinweistext, Kennzeichnung synthetischer Inhalte. **Gilt seit 02.08.2026, von der Fristverschiebung unberührt** |
+| **2.6** | **Transparenz.** **Adressat beachten:** Abs. 1 und 2 verpflichten den **Anbieter** (Gestaltung, Kennzeichnung), Abs. 3 und 4 den **Betreiber** — aber nur bei Emotionserkennung, biometrischer Kategorisierung, Deepfakes und Text, der veröffentlicht wird, **um die Öffentlichkeit über Angelegenheiten von öffentlichem Interesse zu informieren** | Art. 50 | Hinweistext, Kennzeichnung synthetischer Inhalte. **Gilt seit 02.08.2026, von der Fristverschiebung unberührt** |
 | **2.7** | **Menschliche Aufsicht** mit **Eingriffsbefugnis** bei der Person, die sie trägt | Art. 14 | RACI mit benannter Person — und der Befugnis, das System anzuhalten |
 | **2.8** | **Protokollierung** über die Lebensdauer | Art. 12, 19 | Aufbewahrungskonzept |
 | **2.9** | **Registrierung und Konformitätsbewertung** vor Inbetriebnahme eines Hochrisikosystems | Art. 43, 49 | Eintrag in der EU-Datenbank |
@@ -220,7 +220,7 @@ gelten ausdrücklich als Produkte.**
 | 02.02.2025 | **KI-Kompetenz** (Art. 4) und verbotene Praktiken (Art. 5) | VO (EU) 2024/1689 |
 | 12.09.2025 | **Data Act anwendbar** | VO (EU) 2023/2854 |
 | 06.12.2025 | **NIS2-Umsetzungsgesetz in Kraft**, ohne Übergangsfrist | NIS2-RLUG |
-| 02.08.2026 | **Transparenzpflichten** (Art. 50) — von der Verschiebung **unberührt** | VO (EU) 2024/1689 |
+| 02.08.2026 | **Transparenzpflichten** (Art. 50) — von der Verschiebung **unberührt**. **Adressat prüfen:** überwiegend Anbieterpflicht, siehe 2.6 | VO (EU) 2024/1689 |
 | **11.09.2026** | **CRA-Meldepflichten**, 24 h / 72 h, auch für Bestandsprodukte | VO (EU) 2024/2847 |
 | 12.09.2026 | **Access by Design** für neu in Verkehr gebrachte vernetzte Produkte | VO (EU) 2023/2854 |
 | 09.12.2026 | Umsetzungsfrist **Produkthaftung** in nationales Recht | RL (EU) 2024/2853 |
