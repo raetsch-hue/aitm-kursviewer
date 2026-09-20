@@ -189,6 +189,12 @@ var DOKUMENTE = [
   { datei: "../bibliothek/wp-lhind-retail-digital.md",
     titel: "WP · Retail Digital (LHIND) — branchenfremd, begründet abgelegt" },
 
+  { datei: "../recht/pruefungsplan-daten-und-ki.md",
+    titel: "Recht · Prüfungsplan Daten und KI — 38 Prüfpunkte mit Quelle", bereich: "bibliothek" },
+
+  { datei: "../recht/README.md",
+    titel: "Recht · Warum ein eigenes Verzeichnis", bereich: "bibliothek" },
+
   /* ================= ARTEFAKTE =================
      Eigene Arbeitsergebnisse aus ../artefakte/.
      Der folgende Block wird von coursetools/inhalt-bauen.py erzeugt.  */
