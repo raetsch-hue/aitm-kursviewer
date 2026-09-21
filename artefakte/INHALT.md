@@ -1,6 +1,6 @@
 ---
 artefakt: Inhaltsverzeichnis
-stand: 2026-09-20
+stand: 2026-09-21
 status: automatisch erzeugt von coursetools/inhalt-bauen.py
 zweck: alle Themen der Artefakte an einer Stelle, mit Sprung zur Überschrift
 ---
@@ -26,6 +26,7 @@ Alle Dokumente unterhalb von `artefakte/`, aufgeschlüsselt bis zur dritten Übe
 | [Extra · 1 Modelle und Verfahren, die nur genannt wurden](#artefakte/extra/01_modelle-und-verfahren.md) | 2026-09-03 | 10 |
 | [Extra · 2 Zahlen und Befunde, die nicht behandelt wurden](#artefakte/extra/02_zahlen-und-befunde.md) | 2026-09-03 | 9 |
 | [Extra · 3 Spannungen und blinde Flecken](#artefakte/extra/03_spannungen-und-blinde-flecken.md) | 2026-09-03 | 12 |
+| [Woche 05 · Auftrag 1 zu Kurstag 5.1 — zwei reale Fälle eingeordnet, mit den vier Fragen je Fall](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md) | 2026-09-21 | 25 |
 | [Woche 05 · Fragenkatalog für den ganzen Kurs — eine tragende Frage je Kapitel, mit Antwort in Stichpunkten](#artefakte/woche-05/5.1-fragen-je-kapitel.md) | 2026-09-20 | 46 |
 
 ---
@@ -268,6 +269,38 @@ Alle Dokumente unterhalb von `artefakte/`, aufgeschlüsselt bis zur dritten Übe
 
 ## woche-05
 
+### [Woche 05 · Auftrag 1 zu Kurstag 5.1 — zwei reale Fälle eingeordnet, mit den vier Fragen je Fall](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md)
+
+*die beiden ausgegebenen Fälle einordnen — Klasse und Pfad, Ausnahme, Rollen, und die Frage, die offen bleibt*
+
+`artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md` · Stand 2026-09-21
+
+- [Fall 1 · Die Bank lehnt automatisch ab](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#fall-1-·-die-bank-lehnt-automatisch-ab)
+  - [① Welche der vier Klassen, über welchen Pfad?](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#①-welche-der-vier-klassen-über-welchen-pfad)
+  - [② Greift die Ausnahme aus Art. 6 Abs. 3?](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#②-greift-die-ausnahme-aus-art-6-abs-3)
+  - [③ Wer ist Anbieter, wer ist Betreiber?](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#③-wer-ist-anbieter-wer-ist-betreiber)
+  - [④ Welche Frage konnte ich nicht beantworten?](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#④-welche-frage-konnte-ich-nicht-beantworten)
+  - [Der Befund, der in den vier Fragen nicht vorkommt](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#der-befund-der-in-den-vier-fragen-nicht-vorkommt)
+- [Fall 2, Stufe 1 · Wartung vorhersagen](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#fall-2-stufe-1-·-wartung-vorhersagen)
+  - [① Welche der vier Klassen, über welchen Pfad?](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#①-welche-der-vier-klassen-über-welchen-pfad-1)
+  - [② Greift die Ausnahme aus Art. 6 Abs. 3?](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#②-greift-die-ausnahme-aus-art-6-abs-3-1)
+  - [③ Wer ist Anbieter, wer ist Betreiber?](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#③-wer-ist-anbieter-wer-ist-betreiber-1)
+  - [④ Welche Frage konnte ich nicht beantworten?](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#④-welche-frage-konnte-ich-nicht-beantworten-1)
+  - [Der Fehler, in den man hier läuft](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#der-fehler-in-den-man-hier-läuft)
+- [Fall 2, Stufe 2 · Der Aufzug schaltet sich selbst ab](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#fall-2-stufe-2-·-der-aufzug-schaltet-sich-selbst-ab)
+  - [① Welche der vier Klassen, über welchen Pfad?](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#①-welche-der-vier-klassen-über-welchen-pfad-2)
+  - [② Greift die Ausnahme aus Art. 6 Abs. 3?](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#②-greift-die-ausnahme-aus-art-6-abs-3-2)
+  - [③ Wer ist Anbieter, wer ist Betreiber?](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#③-wer-ist-anbieter-wer-ist-betreiber-2)
+  - [④ Welche Frage konnte ich nicht beantworten?](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#④-welche-frage-konnte-ich-nicht-beantworten-2)
+  - [Die Befunde, die in den vier Fragen nicht vorkommen](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#die-befunde-die-in-den-vier-fragen-nicht-vorkommen)
+- [Was die Gegenüberstellung zeigt](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#was-die-gegenüberstellung-zeigt)
+- [Die zwei Fragen, die offen bleiben](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#die-zwei-fragen-die-offen-bleiben)
+  - [Offene Frage 1 · Wird die Bank durch den Schwellenwert zur Anbieterin?](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#offene-frage-1-·-wird-die-bank-durch-den-schwellenwert-zur-anbieterin)
+  - [Offene Frage 2 · Ist das Vorhersagesystem in Stufe 2 ein Sicherheitsbauteil?](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#offene-frage-2-·-ist-das-vorhersagesystem-in-stufe-2-ein-sicherheitsbauteil)
+- [Belegstatus](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#belegstatus)
+- [Änderungsvermerk](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#änderungsvermerk)
+- [Empfehlung](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#empfehlung)
+
 ### [Woche 05 · Fragenkatalog für den ganzen Kurs — eine tragende Frage je Kapitel, mit Antwort in Stichpunkten](#artefakte/woche-05/5.1-fragen-je-kapitel.md)
 
 *je Kapitel eine Frage, die den Kurs voranbringt statt Verständnis abzufragen — mit der eigenen Antwort daneben, damit keine Frage gestellt wird, die ich selbst nicht beantworten könnte*
@@ -323,4 +356,4 @@ Alle Dokumente unterhalb von `artefakte/`, aufgeschlüsselt bis zur dritten Übe
 
 ---
 
-*Erzeugt am 2026-09-20 aus 16 Dokumenten. Neu erzeugen: `python coursetools/inhalt-bauen.py`*
+*Erzeugt am 2026-09-21 aus 17 Dokumenten. Neu erzeugen: `python coursetools/inhalt-bauen.py`*

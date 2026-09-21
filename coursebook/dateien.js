@@ -199,7 +199,7 @@ var DOKUMENTE = [
      Eigene Arbeitsergebnisse aus ../artefakte/.
      Der folgende Block wird von coursetools/inhalt-bauen.py erzeugt.  */
 
-  /* >>> ARTEFAKTE-ANFANG (17 Dokumente, 2026-09-20)
+  /* >>> ARTEFAKTE-ANFANG (18 Dokumente, 2026-09-21)
       Automatisch erzeugt von coursetools/inhalt-bauen.py.
       Nicht von Hand aendern - Aenderungen gehen beim naechsten Lauf
       verloren. Anzeigetitel stellt man im Skript unter TITEL ein.  */
@@ -258,6 +258,10 @@ var DOKUMENTE = [
 
   { datei: "../artefakte/extra/03_spannungen-und-blinde-flecken.md",
     titel: "Extra · 3 Spannungen und blinde Flecken",
+    bereich: "artefakte" },
+
+  { datei: "../artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md",
+    titel: "Woche 05 · Auftrag 1 zu Kurstag 5.1 — zwei reale Fälle eingeordnet, mit den vier Fragen je Fall",
     bereich: "artefakte" },
 
   { datei: "../artefakte/woche-05/5.1-fragen-je-kapitel.md",

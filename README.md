@@ -35,4 +35,4 @@ vom Autor dieses Repositories. Eigene Arbeit sind `artefakte/`,
 `bibliothek/`, `lerntagebuch/` und die als *Ergaenzung* benannten
 Dateien im Coursebook.
 
-Erzeugt am 2026-09-20.
+Erzeugt am 2026-09-21.
