@@ -199,7 +199,7 @@ Diese Pflichten sind vom Omnibus **nicht** berührt und in der Praxis meist die 
 | Rechtsgrundlage | Worum es geht |
 |---|---|
 | **DSGVO Art. 22** | Verbot rein automatisierter Einzelentscheidungen mit erheblicher Wirkung, mit engen Ausnahmen |
-| **DSGVO Art. 35** | Datenschutz-Folgenabschätzung. **Sie wird durch die FRIA nach Art. 27 nicht ersetzt** — beide können nebeneinander nötig sein |
+| **DSGVO Art. 35** | Datenschutz-Folgenabschätzung. **Sie wird durch die FRIA nach Art. 27 nicht ersetzt** — beide können nebeneinander nötig sein. Abgrenzung im Einzelnen — Adressat, Auslöser, Gegenstand, Behördenweg — in [`coursebook/woche-5/5.3`, Annex A](../coursebook/woche-5/5.3/5.3_Career-Day-Spike-Day-und-die-Lektuere.md#annexa) |
 | **DSGVO Art. 5, 6, 9, 28** | Rechtsgrundlage, Zweckbindung, besondere Datenkategorien, Auftragsverarbeitung |
 | **§ 87 Abs. 1 Nr. 6 BetrVG** | Mitbestimmung bei technischen Einrichtungen, die zur Überwachung von Verhalten oder Leistung **geeignet** sind — Eignung genügt, Absicht ist nicht nötig |
 | **§ 26 BDSG** | Datenverarbeitung im Beschäftigungsverhältnis |

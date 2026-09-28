@@ -1,6 +1,6 @@
 ---
 artefakt: Inhaltsverzeichnis
-stand: 2026-09-21
+stand: 2026-09-24
 status: automatisch erzeugt von coursetools/inhalt-bauen.py
 zweck: alle Themen der Artefakte an einer Stelle, mit Sprung zur Überschrift
 ---
@@ -26,8 +26,17 @@ Alle Dokumente unterhalb von `artefakte/`, aufgeschlüsselt bis zur dritten Übe
 | [Extra · 1 Modelle und Verfahren, die nur genannt wurden](#artefakte/extra/01_modelle-und-verfahren.md) | 2026-09-03 | 10 |
 | [Extra · 2 Zahlen und Befunde, die nicht behandelt wurden](#artefakte/extra/02_zahlen-und-befunde.md) | 2026-09-03 | 9 |
 | [Extra · 3 Spannungen und blinde Flecken](#artefakte/extra/03_spannungen-und-blinde-flecken.md) | 2026-09-03 | 12 |
+| [Woche 05 · Arbeitsphase Tag 5.2 — drei dringlichste Pflichten und die Rollenfrage](#artefakte/woche-05/5.2-arbeitsphase-pflichten-und-rolle.md) | 2026-09-21 | 7 |
 | [Woche 05 · Auftrag 1 zu Kurstag 5.1 — zwei reale Fälle eingeordnet, mit den vier Fragen je Fall](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md) | 2026-09-21 | 25 |
+| [Woche 05 · Auftrag Tag 5.2, Schritt 2 — die drei Festlegungen und Phase 2 der Lebenszyklus-RACI](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md) | 2026-09-22 | 44 |
+| [Woche 05 · Austausch 3 zu Tag 5.2 — die drei Fragen, die das Gesetz nicht stellt, am Fall beantwortet](#artefakte/woche-05/5.2-austausch-3-drei-fragen-die-das-gesetz-nicht-stellt.md) | 2026-09-22 | 11 |
 | [Woche 05 · Fragenkatalog für den ganzen Kurs — eine tragende Frage je Kapitel, mit Antwort in Stichpunkten](#artefakte/woche-05/5.1-fragen-je-kapitel.md) | 2026-09-20 | 46 |
+| [Woche 05 · Lebenszyklus-RACI — laufender Stand zum 1. Juni 2027](#artefakte/woche-05/5.4-raci-stand-2027-06-01.md) | 2026-09-24 | 10 |
+| [Woche 05 · Lebenszyklus-RACI — laufender Stand zum 1. März 2028](#artefakte/woche-05/5.4-raci-stand-2028-03-01.md) | 2026-09-24 | 10 |
+| [Woche 05 · Nachweisprüfung 2 — dieselben sechs Prüfartikel, Stand 01.06.2027](#artefakte/woche-05/5.4-nachweispruefung-2-stand-2027-06-01.md) | 2026-09-24 | 8 |
+| [Woche 05 · Nachweisprüfung 3 — dieselben sechs Prüfartikel, Stand 01.03.2028](#artefakte/woche-05/5.4-nachweispruefung-3-stand-2028-03-01.md) | 2026-09-24 | 6 |
+| [Woche 05 · Nachweisvorlage Tag 5.4 — die sechs Prüfartikel, ausgefüllt](#artefakte/woche-05/5.4-nachweisvorlage-sechs-pruefartikel.md) | 2026-09-24 | 10 |
+| [Woche 05 · Schritt 1 — Rollen übertragen](#artefakte/woche-05/5.2-auftrag-schritt-1-rollen-tabelle.md) | 2026-09-22 | 5 |
 
 ---
 
@@ -269,6 +278,20 @@ Alle Dokumente unterhalb von `artefakte/`, aufgeschlüsselt bis zur dritten Übe
 
 ## woche-05
 
+### [Woche 05 · Arbeitsphase Tag 5.2 — drei dringlichste Pflichten und die Rollenfrage](#artefakte/woche-05/5.2-arbeitsphase-pflichten-und-rolle.md)
+
+*die Auswahl der drei Pflichten nach dem Nachmittag zu 5.2 **neu begründen** — und die Rollenfrage beantworten, bevor die Lektüre sie beantwortet*
+
+`artefakte/woche-05/5.2-arbeitsphase-pflichten-und-rolle.md` · Stand 2026-09-21
+
+- [Was ich nach dem Nachmittag anders begründe](#artefakte/woche-05/5.2-arbeitsphase-pflichten-und-rolle.md#was-ich-nach-dem-nachmittag-anders-begründe)
+- [Teil 1 · Die drei dringlichsten Pflichten](#artefakte/woche-05/5.2-arbeitsphase-pflichten-und-rolle.md#teil-1-·-die-drei-dringlichsten-pflichten)
+  - [1 · Mitbestimmung — § 87 Abs. 1 Nr. 6 BetrVG](#artefakte/woche-05/5.2-arbeitsphase-pflichten-und-rolle.md#1-·-mitbestimmung--§-87-abs-1-nr-6-betrvg)
+  - [2 · Auftragsverarbeitung — Art. 28 DSGVO](#artefakte/woche-05/5.2-arbeitsphase-pflichten-und-rolle.md#2-·-auftragsverarbeitung--art-28-dsgvo)
+  - [3 · Löschen und aufbewahren — Art. 5 Abs. 1 lit. e, Art. 17 Abs. 3 DSGVO](#artefakte/woche-05/5.2-arbeitsphase-pflichten-und-rolle.md#3-·-löschen-und-aufbewahren--art-5-abs-1-lit-e-art-17-abs-3-dsgvo)
+- [Teil 2 · Die Leitfrage](#artefakte/woche-05/5.2-arbeitsphase-pflichten-und-rolle.md#teil-2-·-die-leitfrage)
+- [Empfehlung](#artefakte/woche-05/5.2-arbeitsphase-pflichten-und-rolle.md#empfehlung)
+
 ### [Woche 05 · Auftrag 1 zu Kurstag 5.1 — zwei reale Fälle eingeordnet, mit den vier Fragen je Fall](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md)
 
 *die beiden ausgegebenen Fälle einordnen — Klasse und Pfad, Ausnahme, Rollen, und die Frage, die offen bleibt*
@@ -300,6 +323,75 @@ Alle Dokumente unterhalb von `artefakte/`, aufgeschlüsselt bis zur dritten Übe
 - [Belegstatus](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#belegstatus)
 - [Änderungsvermerk](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#änderungsvermerk)
 - [Empfehlung](#artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md#empfehlung)
+
+### [Woche 05 · Auftrag Tag 5.2, Schritt 2 — die drei Festlegungen und Phase 2 der Lebenszyklus-RACI](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md)
+
+*die drei offenen Entscheidungen aus Schritt 1 so weit festlegen, dass jede RACI-Zeile **genau einen** Accountable tragen kann — und die Lebenszyklus-RACI über alle fünf Phasen bauen, beginnend mit Pre-Deploy und Governance, weil dort die Lücken sitzen*
+
+`artefakte/woche-05/5.2-auftrag-schritt-2-raci.md` · Stand 2026-09-22
+
+- [1 · Die drei Festlegungen](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#1-·-die-drei-festlegungen)
+  - [1.0 Was der Registerabgleich vorweg ergeben hat](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#10-was-der-registerabgleich-vorweg-ergeben-hat)
+  - [1.1 Festlegung 1 — die Leitungsrolle liegt bei Rolle 1 · BV9](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#11-festlegung-1--die-leitungsrolle-liegt-bei-rolle-1-·-bv9)
+  - [1.2 Festlegung 2 — Systemverantwortung und Fehlerbewertung werden getrennt · BV10](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#12-festlegung-2--systemverantwortung-und-fehlerbewertung-werden-getrennt-·-bv10)
+  - [1.3 Festlegung 3 — kein neuer Vorschlag, eine Präzisierung zu BV5](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#13-festlegung-3--kein-neuer-vorschlag-eine-präzisierung-zu-bv5)
+  - [1.4 Was die drei Festlegungen zusammen bewirken — und was nicht](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#14-was-die-drei-festlegungen-zusammen-bewirken--und-was-nicht)
+- [2 · Phase 2 — Pre-Deploy](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#2-·-phase-2--pre-deploy)
+  - [2.1 Die Rollen dieser Phase](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#21-die-rollen-dieser-phase)
+  - [2.2 Die RACI](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#22-die-raci)
+  - [2.3 Die vier Befunde aus Phase 2](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#23-die-vier-befunde-aus-phase-2)
+  - [2.4 Die Auslöserprobe — Zusatzfrage (d)](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#24-die-auslöserprobe--zusatzfrage-d)
+- [3 · Phase 5 — Governance](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#3-·-phase-5--governance)
+  - [3.1 Die RACI](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#31-die-raci)
+  - [3.2 Die vier Befunde aus Phase 5](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#32-die-vier-befunde-aus-phase-5)
+- [4 · Phase 1 — Development](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#4-·-phase-1--development)
+  - [4.1 Die zwei Befunde aus Phase 1](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#41-die-zwei-befunde-aus-phase-1)
+- [5 · Phase 3 — Deploy](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#5-·-phase-3--deploy)
+  - [5.1 Die zwei Befunde aus Phase 3](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#51-die-zwei-befunde-aus-phase-3)
+- [6 · Phase 4 — Operations](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#6-·-phase-4--operations)
+  - [6.1 Die drei Befunde aus Phase 4](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#61-die-drei-befunde-aus-phase-4)
+- [7 · Die RACI über alle fünf Phasen](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#7-·-die-raci-über-alle-fünf-phasen)
+  - [7.1 Wer trägt die Accountables](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#71-wer-trägt-die-accountables)
+  - [7.2 Elf Zeilen ohne wirksamen Träger — neun Gegenstände](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#72-elf-zeilen-ohne-wirksamen-träger--neun-gegenstände)
+  - [7.3 Die Auslöserprobe über alle Phasen — Zusatzfrage (d)](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#73-die-auslöserprobe-über-alle-phasen--zusatzfrage-d)
+- [8 · Vorbemerkung, die zum Befund gehört](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#8-·-vorbemerkung-die-zum-befund-gehört)
+- [9 · Der Lauf — die drei Prüffragen](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#9-·-der-lauf--die-drei-prüffragen)
+  - [(a) Welche Aktivitäten haben kein Accountable?](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#a-welche-aktivitäten-haben-kein-accountable)
+  - [(b) Welche Rollen kommen gar nicht vor?](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#b-welche-rollen-kommen-gar-nicht-vor)
+  - [(c) Welche Phase ist am stärksten unterbesetzt?](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#c-welche-phase-ist-am-stärksten-unterbesetzt)
+- [10 · Welche Empfehlung der Maschine hier nicht umsetzbar ist](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#10-·-welche-empfehlung-der-maschine-hier-nicht-umsetzbar-ist)
+- [11 · Die Lückenliste](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#11-·-die-lückenliste)
+- [12 · Die fünf Dimensionen](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#12-·-die-fünf-dimensionen)
+  - [12.1 Verantwortlichkeit und Governance — zuerst, wie der Auftrag empfiehlt](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#121-verantwortlichkeit-und-governance--zuerst-wie-der-auftrag-empfiehlt)
+  - [12.2 Sicherheit und Zuverlässigkeit](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#122-sicherheit-und-zuverlässigkeit)
+  - [12.3 Fairness und Verzerrung](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#123-fairness-und-verzerrung)
+  - [12.4 Datenschutz und Sicherheit](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#124-datenschutz-und-sicherheit)
+  - [12.5 Transparenz und Erklärbarkeit](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#125-transparenz-und-erklärbarkeit)
+  - [12.6 Das Bild auf einen Blick](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#126-das-bild-auf-einen-blick)
+- [13 · Die Entscheidung](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#13-·-die-entscheidung)
+  - [13.1 Stufe 1 — freigegebener KI-Zugang: Go mit Auflagen](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#131-stufe-1--freigegebener-ki-zugang-go-mit-auflagen)
+  - [13.2 Stufe 4 — Besetzungsassistent: No-Go für eine Beschaffungsentscheidung in 2026](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#132-stufe-4--besetzungsassistent-no-go-für-eine-beschaffungsentscheidung-in-2026)
+  - [13.3 Und der Satz, der über beide Entscheidungen steht](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#133-und-der-satz-der-über-beide-entscheidungen-steht)
+- [14 · Reflexion — was dieser Nachmittag gezeigt hat](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#14-·-reflexion--was-dieser-nachmittag-gezeigt-hat)
+- [Empfehlung zum Gesamtdokument](#artefakte/woche-05/5.2-auftrag-schritt-2-raci.md#empfehlung-zum-gesamtdokument)
+
+### [Woche 05 · Austausch 3 zu Tag 5.2 — die drei Fragen, die das Gesetz nicht stellt, am Fall beantwortet](#artefakte/woche-05/5.2-austausch-3-drei-fragen-die-das-gesetz-nicht-stellt.md)
+
+*die drei Fragen aus Austausch 3 (Nachteile · Erklärbarkeit · Abbruchsignal) am eigenen Übungsfall beantworten, in der Form der vier Zettel — und die Lücke benennen, die dabei sichtbar wird*
+
+`artefakte/woche-05/5.2-austausch-3-drei-fragen-die-das-gesetz-nicht-stellt.md` · Stand 2026-09-22
+
+- [1 · Die vier Zettel](#artefakte/woche-05/5.2-austausch-3-drei-fragen-die-das-gesetz-nicht-stellt.md#1-·-die-vier-zettel)
+- [2 · Frage 1 — wer trägt die Nachteile, und wurde die Gruppe gefragt](#artefakte/woche-05/5.2-austausch-3-drei-fragen-die-das-gesetz-nicht-stellt.md#2-·-frage-1--wer-trägt-die-nachteile-und-wurde-die-gruppe-gefragt)
+- [3 · Frage 2 — würdet ihr es erklären wollen](#artefakte/woche-05/5.2-austausch-3-drei-fragen-die-das-gesetz-nicht-stellt.md#3-·-frage-2--würdet-ihr-es-erklären-wollen)
+- [4 · Frage 3 — das Abbruchsignal](#artefakte/woche-05/5.2-austausch-3-drei-fragen-die-das-gesetz-nicht-stellt.md#4-·-frage-3--das-abbruchsignal)
+  - [4.1 Der Befund, der dem Vorschlag vorausgeht](#artefakte/woche-05/5.2-austausch-3-drei-fragen-die-das-gesetz-nicht-stellt.md#41-der-befund-der-dem-vorschlag-vorausgeht)
+  - [4.2 Drei Signale — Vorschlag, nicht beschlossen](#artefakte/woche-05/5.2-austausch-3-drei-fragen-die-das-gesetz-nicht-stellt.md#42-drei-signale--vorschlag-nicht-beschlossen)
+  - [4.3 Die Lücke, die das Signal wertlos macht](#artefakte/woche-05/5.2-austausch-3-drei-fragen-die-das-gesetz-nicht-stellt.md#43-die-lücke-die-das-signal-wertlos-macht)
+- [5 · Wo das im Assessment andockt](#artefakte/woche-05/5.2-austausch-3-drei-fragen-die-das-gesetz-nicht-stellt.md#5-·-wo-das-im-assessment-andockt)
+- [6 · Gegenargumente](#artefakte/woche-05/5.2-austausch-3-drei-fragen-die-das-gesetz-nicht-stellt.md#6-·-gegenargumente)
+- [7 · Was offen bleibt](#artefakte/woche-05/5.2-austausch-3-drei-fragen-die-das-gesetz-nicht-stellt.md#7-·-was-offen-bleibt)
+- [Empfehlung](#artefakte/woche-05/5.2-austausch-3-drei-fragen-die-das-gesetz-nicht-stellt.md#empfehlung)
 
 ### [Woche 05 · Fragenkatalog für den ganzen Kurs — eine tragende Frage je Kapitel, mit Antwort in Stichpunkten](#artefakte/woche-05/5.1-fragen-je-kapitel.md)
 
@@ -354,6 +446,95 @@ Alle Dokumente unterhalb von `artefakte/`, aufgeschlüsselt bis zur dritten Übe
 - [Änderungsvermerk](#artefakte/woche-05/5.1-fragen-je-kapitel.md#änderungsvermerk)
 - [Empfehlung](#artefakte/woche-05/5.1-fragen-je-kapitel.md#empfehlung)
 
+### [Woche 05 · Lebenszyklus-RACI — laufender Stand zum 1. Juni 2027](#artefakte/woche-05/5.4-raci-stand-2027-06-01.md)
+
+*zeigen, welche Aktivitäten der Lebenszyklus-RACI nach sechzehn Beschlüssen einen Träger haben — und welche nicht*
+
+`artefakte/woche-05/5.4-raci-stand-2027-06-01.md` · Stand 2026-09-24
+
+- [Die Veränderung in einer Zeile](#artefakte/woche-05/5.4-raci-stand-2027-06-01.md#die-veränderung-in-einer-zeile)
+- [1 · Was sich geändert hat, Zeile für Zeile](#artefakte/woche-05/5.4-raci-stand-2027-06-01.md#1-·-was-sich-geändert-hat-zeile-für-zeile)
+- [2 · Was offen bleibt](#artefakte/woche-05/5.4-raci-stand-2027-06-01.md#2-·-was-offen-bleibt)
+- [3 · Die RACI, vollständig](#artefakte/woche-05/5.4-raci-stand-2027-06-01.md#3-·-die-raci-vollständig)
+  - [Phase 1 — Development](#artefakte/woche-05/5.4-raci-stand-2027-06-01.md#phase-1--development)
+  - [Phase 2 — Pre-Deploy](#artefakte/woche-05/5.4-raci-stand-2027-06-01.md#phase-2--pre-deploy)
+  - [Phase 3 — Deploy](#artefakte/woche-05/5.4-raci-stand-2027-06-01.md#phase-3--deploy)
+  - [Phase 4 — Operations](#artefakte/woche-05/5.4-raci-stand-2027-06-01.md#phase-4--operations)
+  - [Phase 5 — Governance](#artefakte/woche-05/5.4-raci-stand-2027-06-01.md#phase-5--governance)
+- [Empfehlung](#artefakte/woche-05/5.4-raci-stand-2027-06-01.md#empfehlung)
+
+### [Woche 05 · Lebenszyklus-RACI — laufender Stand zum 1. März 2028](#artefakte/woche-05/5.4-raci-stand-2028-03-01.md)
+
+*zeigen, welche Aktivitäten der Lebenszyklus-RACI nach sechzehn Beschlüssen einen Träger haben — und welche nicht*
+
+`artefakte/woche-05/5.4-raci-stand-2028-03-01.md` · Stand 2026-09-24
+
+- [Die Veränderung in einer Zeile](#artefakte/woche-05/5.4-raci-stand-2028-03-01.md#die-veränderung-in-einer-zeile)
+- [1 · Was sich geändert hat, Zeile für Zeile](#artefakte/woche-05/5.4-raci-stand-2028-03-01.md#1-·-was-sich-geändert-hat-zeile-für-zeile)
+- [2 · Was offen bleibt](#artefakte/woche-05/5.4-raci-stand-2028-03-01.md#2-·-was-offen-bleibt)
+- [3 · Die RACI, vollständig](#artefakte/woche-05/5.4-raci-stand-2028-03-01.md#3-·-die-raci-vollständig)
+  - [Phase 1 — Development](#artefakte/woche-05/5.4-raci-stand-2028-03-01.md#phase-1--development)
+  - [Phase 2 — Pre-Deploy](#artefakte/woche-05/5.4-raci-stand-2028-03-01.md#phase-2--pre-deploy)
+  - [Phase 3 — Deploy](#artefakte/woche-05/5.4-raci-stand-2028-03-01.md#phase-3--deploy)
+  - [Phase 4 — Operations](#artefakte/woche-05/5.4-raci-stand-2028-03-01.md#phase-4--operations)
+  - [Phase 5 — Governance](#artefakte/woche-05/5.4-raci-stand-2028-03-01.md#phase-5--governance)
+- [Empfehlung](#artefakte/woche-05/5.4-raci-stand-2028-03-01.md#empfehlung)
+
+### [Woche 05 · Nachweisprüfung 2 — dieselben sechs Prüfartikel, Stand 01.06.2027](#artefakte/woche-05/5.4-nachweispruefung-2-stand-2027-06-01.md)
+
+*die Vorabprüfung vom 24.09.2026 wiederholen — **mit denselben sechs Artikeln und derselben Regel** — und zeigen, was sich durch die Beschlüsse geändert hat und was nicht*
+
+`artefakte/woche-05/5.4-nachweispruefung-2-stand-2027-06-01.md` · Stand 2026-09-24
+
+- [1 · Die sechs Artikel, zweite Prüfung](#artefakte/woche-05/5.4-nachweispruefung-2-stand-2027-06-01.md#1-·-die-sechs-artikel-zweite-prüfung)
+- [2 · Was die Beschlüsse tatsächlich bewirkt haben](#artefakte/woche-05/5.4-nachweispruefung-2-stand-2027-06-01.md#2-·-was-die-beschlüsse-tatsächlich-bewirkt-haben)
+  - [Die zwei, die sich bewegt haben, ohne Geld zu kosten](#artefakte/woche-05/5.4-nachweispruefung-2-stand-2027-06-01.md#die-zwei-die-sich-bewegt-haben-ohne-geld-zu-kosten)
+  - [Art. 11 und 12 bewegen sich nicht, weil sie sich nicht bewegen können](#artefakte/woche-05/5.4-nachweispruefung-2-stand-2027-06-01.md#art-11-und-12-bewegen-sich-nicht-weil-sie-sich-nicht-bewegen-können)
+- [3 · Der Befund, der die erste Prüfung getragen hat — und heute nur halb gelöst ist](#artefakte/woche-05/5.4-nachweispruefung-2-stand-2027-06-01.md#3-·-der-befund-der-die-erste-prüfung-getragen-hat--und-heute-nur-halb-gelöst-ist)
+- [4 · Die Nachweisfragen — von sechzehn sind neun beantwortbar](#artefakte/woche-05/5.4-nachweispruefung-2-stand-2027-06-01.md#4-·-die-nachweisfragen--von-sechzehn-sind-neun-beantwortbar)
+- [5 · Was am 1. Juni 2027 offen ist](#artefakte/woche-05/5.4-nachweispruefung-2-stand-2027-06-01.md#5-·-was-am-1-juni-2027-offen-ist)
+- [Empfehlung](#artefakte/woche-05/5.4-nachweispruefung-2-stand-2027-06-01.md#empfehlung)
+
+### [Woche 05 · Nachweisprüfung 3 — dieselben sechs Prüfartikel, Stand 01.03.2028](#artefakte/woche-05/5.4-nachweispruefung-3-stand-2028-03-01.md)
+
+*die Prüfung ein drittes Mal fahren — **mit denselben sechs Artikeln und derselben Regel** — und sagen, was jetzt vorliegt, was daran nachgewiesen ist und was trotzdem offen bleibt*
+
+`artefakte/woche-05/5.4-nachweispruefung-3-stand-2028-03-01.md` · Stand 2026-09-24
+
+- [1 · Die sechs Artikel, drei Stände nebeneinander](#artefakte/woche-05/5.4-nachweispruefung-3-stand-2028-03-01.md#1-·-die-sechs-artikel-drei-stände-nebeneinander)
+- [2 · Der Satz, der drei Prüfungen lang gehalten hat](#artefakte/woche-05/5.4-nachweispruefung-3-stand-2028-03-01.md#2-·-der-satz-der-drei-prüfungen-lang-gehalten-hat)
+- [3 · Die Nachweisfragen — 16 von 16](#artefakte/woche-05/5.4-nachweispruefung-3-stand-2028-03-01.md#3-·-die-nachweisfragen--16-von-16)
+- [4 · Und was trotzdem offen ist](#artefakte/woche-05/5.4-nachweispruefung-3-stand-2028-03-01.md#4-·-und-was-trotzdem-offen-ist)
+- [5 · Was den Ausschlag gegeben hat](#artefakte/woche-05/5.4-nachweispruefung-3-stand-2028-03-01.md#5-·-was-den-ausschlag-gegeben-hat)
+- [Empfehlung](#artefakte/woche-05/5.4-nachweispruefung-3-stand-2028-03-01.md#empfehlung)
+
+### [Woche 05 · Nachweisvorlage Tag 5.4 — die sechs Prüfartikel, ausgefüllt](#artefakte/woche-05/5.4-nachweisvorlage-sechs-pruefartikel.md)
+
+*je Prüfartikel eintragen, **welches Dokument heute vorgelegt werden könnte** — mit Name, Ort und Datum, wie der Auftrag es verlangt*
+
+`artefakte/woche-05/5.4-nachweisvorlage-sechs-pruefartikel.md` · Stand 2026-09-24
+
+- [0 · Der Satz, der vor der Tabelle steht](#artefakte/woche-05/5.4-nachweisvorlage-sechs-pruefartikel.md#0-·-der-satz-der-vor-der-tabelle-steht)
+- [1 · Die Vorlage, ausgefüllt](#artefakte/woche-05/5.4-nachweisvorlage-sechs-pruefartikel.md#1-·-die-vorlage-ausgefüllt)
+- [2 · Was hinter den drei Urteilen steckt, die nicht „keine" sind](#artefakte/woche-05/5.4-nachweisvorlage-sechs-pruefartikel.md#2-·-was-hinter-den-drei-urteilen-steckt-die-nicht-keine-sind)
+  - [Art. 9 — wir haben Analysen, keinen Prozess](#artefakte/woche-05/5.4-nachweisvorlage-sechs-pruefartikel.md#art-9--wir-haben-analysen-keinen-prozess)
+  - [Art. 13 — Kommunikation ja, Schulung nein](#artefakte/woche-05/5.4-nachweisvorlage-sechs-pruefartikel.md#art-13--kommunikation-ja-schulung-nein)
+  - [Art. 14 — gestaltet und nicht belegbar](#artefakte/woche-05/5.4-nachweisvorlage-sechs-pruefartikel.md#art-14--gestaltet-und-nicht-belegbar)
+- [3 · Die vier Audit-Trail-Fragen, am eigenen Fall](#artefakte/woche-05/5.4-nachweisvorlage-sechs-pruefartikel.md#3-·-die-vier-audit-trail-fragen-am-eigenen-fall)
+- [4 · Was daraus für die Ausschreibung folgt](#artefakte/woche-05/5.4-nachweisvorlage-sechs-pruefartikel.md#4-·-was-daraus-für-die-ausschreibung-folgt)
+- [5 · Was diese Prüfung über die Methode sagt](#artefakte/woche-05/5.4-nachweisvorlage-sechs-pruefartikel.md#5-·-was-diese-prüfung-über-die-methode-sagt)
+- [Empfehlung](#artefakte/woche-05/5.4-nachweisvorlage-sechs-pruefartikel.md#empfehlung)
+
+### [Woche 05 · Schritt 1 — Rollen übertragen](#artefakte/woche-05/5.2-auftrag-schritt-1-rollen-tabelle.md)
+
+`artefakte/woche-05/5.2-auftrag-schritt-1-rollen-tabelle.md` · Stand 2026-09-22
+
+- [Die Tabelle](#artefakte/woche-05/5.2-auftrag-schritt-1-rollen-tabelle.md#die-tabelle)
+- [Drei Befunde, die aus der Tabelle folgen](#artefakte/woche-05/5.2-auftrag-schritt-1-rollen-tabelle.md#drei-befunde-die-aus-der-tabelle-folgen)
+- [Was in dieser Tabelle bewusst nicht steht](#artefakte/woche-05/5.2-auftrag-schritt-1-rollen-tabelle.md#was-in-dieser-tabelle-bewusst-nicht-steht)
+- [Offene Punkte für Schritt 2](#artefakte/woche-05/5.2-auftrag-schritt-1-rollen-tabelle.md#offene-punkte-für-schritt-2)
+- [Empfehlung](#artefakte/woche-05/5.2-auftrag-schritt-1-rollen-tabelle.md#empfehlung)
+
 ---
 
-*Erzeugt am 2026-09-21 aus 17 Dokumenten. Neu erzeugen: `python coursetools/inhalt-bauen.py`*
+*Erzeugt am 2026-09-24 aus 26 Dokumenten. Neu erzeugen: `python coursetools/inhalt-bauen.py`*

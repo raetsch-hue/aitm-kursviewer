@@ -135,10 +135,32 @@ var DOKUMENTE = [
   { datei: "woche-5/5.5/5.5_Synthese-Governance-Framework.md",
     titel: "5.5 · Synthese: Das Governance Framework" },
 
+  { datei: "woche-6/6.0/6.0_Essentials-Woche-6.md",
+    titel: "6.0 · Essentials Woche 6 — Kosten, Weg, Kennzahlen, Vorlage" },
+
+  { datei: "woche-6/6.1/6.1_Was-kostet-KI-wirklich.md",
+    titel: "6.1 · Was kostet KI wirklich: Renditelücke und versteckte Kosten" },
+
+  { datei: "woche-6/6.2/6.2_Bauen-kaufen-oder-Partner.md",
+    titel: "6.2 · Bauen, kaufen oder Partner: die Entscheidung über den Weg" },
+
+  { datei: "woche-6/6.3/6.3_Career-Day-Spike-Day-und-Kennzahlen.md",
+    titel: "6.3 · Career Day, Spike Day und die Kennzahlen" },
+
+  { datei: "woche-6/6.4/6.4_Die-Investitionsvorlage.md",
+    titel: "6.4 · Bauen und überzeugen: die Investitionsvorlage" },
+
+  { datei: "woche-6/6.5/6.5_Peer-Jury-und-Retrospektive.md",
+    titel: "6.5 · Modul-1-Abschluss: Peer-Jury und Retrospektive" },
+
   /* ================= BIBLIOTHEK =================
      Eigene Nachschlage-Einträge aus ../bibliothek/.
      Pfad beginnt mit ../ , weil viewer.html in coursebook/ liegt.
      Sortiert wird hier alphabetisch nach Titel, nicht nach Nummer.  */
+
+  { datei: "../bibliothek/nachweis-braucht-einen-ausloeser.md",
+    titel: "Ein Nachweis braucht einen Auslöser — vier Prüfkriterien und vier Regeln",
+    bereich: "bibliothek" },
 
   { datei: "../bibliothek/lewin-adkar.md",
     titel: "Lewin & ADKAR",
@@ -199,7 +221,7 @@ var DOKUMENTE = [
      Eigene Arbeitsergebnisse aus ../artefakte/.
      Der folgende Block wird von coursetools/inhalt-bauen.py erzeugt.  */
 
-  /* >>> ARTEFAKTE-ANFANG (18 Dokumente, 2026-09-21)
+  /* >>> ARTEFAKTE-ANFANG (27 Dokumente, 2026-09-24)
       Automatisch erzeugt von coursetools/inhalt-bauen.py.
       Nicht von Hand aendern - Aenderungen gehen beim naechsten Lauf
       verloren. Anzeigetitel stellt man im Skript unter TITEL ein.  */
@@ -260,13 +282,57 @@ var DOKUMENTE = [
     titel: "Extra · 3 Spannungen und blinde Flecken",
     bereich: "artefakte" },
 
+  { datei: "../artefakte/woche-05/5.2-arbeitsphase-pflichten-und-rolle.md",
+    titel: "Woche 05 · Arbeitsphase Tag 5.2 — drei dringlichste Pflichten und die Rollenfrage",
+    bereich: "artefakte" },
+
   { datei: "../artefakte/woche-05/5.1-auftrag-1-zwei-reale-faelle.md",
     titel: "Woche 05 · Auftrag 1 zu Kurstag 5.1 — zwei reale Fälle eingeordnet, mit den vier Fragen je Fall",
+    bereich: "artefakte" },
+
+  { datei: "../artefakte/woche-05/5.2-auftrag-schritt-2-raci.md",
+    titel: "Woche 05 · Auftrag Tag 5.2, Schritt 2 — die drei Festlegungen und Phase 2 der Lebenszyklus-RACI",
+    bereich: "artefakte" },
+
+  { datei: "../artefakte/woche-05/5.2-austausch-3-drei-fragen-die-das-gesetz-nicht-stellt.md",
+    titel: "Woche 05 · Austausch 3 zu Tag 5.2 — die drei Fragen, die das Gesetz nicht stellt, am Fall beantwortet",
     bereich: "artefakte" },
 
   { datei: "../artefakte/woche-05/5.1-fragen-je-kapitel.md",
     titel: "Woche 05 · Fragenkatalog für den ganzen Kurs — eine tragende Frage je Kapitel, mit Antwort in Stichpunkten",
     bereich: "artefakte" },
+
+  { datei: "../artefakte/woche-05/5.4-raci-stand-2027-06-01.md",
+    titel: "Woche 05 · Lebenszyklus-RACI — laufender Stand zum 1. Juni 2027",
+    bereich: "artefakte" },
+
+  { datei: "../artefakte/woche-05/5.4-raci-stand-2028-03-01.md",
+    titel: "Woche 05 · Lebenszyklus-RACI — laufender Stand zum 1. März 2028",
+    bereich: "artefakte" },
+
+  { datei: "../artefakte/woche-05/5.4-nachweispruefung-2-stand-2027-06-01.md",
+    titel: "Woche 05 · Nachweisprüfung 2 — dieselben sechs Prüfartikel, Stand 01.06.2027",
+    bereich: "artefakte" },
+
+  { datei: "../artefakte/woche-05/5.4-nachweispruefung-3-stand-2028-03-01.md",
+    titel: "Woche 05 · Nachweisprüfung 3 — dieselben sechs Prüfartikel, Stand 01.03.2028",
+    bereich: "artefakte" },
+
+  { datei: "../artefakte/woche-05/5.4-nachweisvorlage-sechs-pruefartikel.md",
+    titel: "Woche 05 · Nachweisvorlage Tag 5.4 — die sechs Prüfartikel, ausgefüllt",
+    bereich: "artefakte" },
+
+  { datei: "../artefakte/woche-05/5.2-auftrag-schritt-1-rollen-tabelle.md",
+    titel: "Woche 05 · Schritt 1 — Rollen übertragen",
+    bereich: "artefakte" },
+  { datei: "../artefakte/woche-05/5.4-audit-simulation-zehn-nachweisfragen.md",
+    titel: "Woche 05 · Audit-Simulation Tag 5.4 — zehn Nachweisfragen, gegengeprüft",
+    bereich: "artefakte" },
+
+  { datei: "../artefakte/woche-05/5.4-audit-zusammenfassung-zwei-minuten.md",
+    titel: "Woche 05 · Audit-Zusammenfassung Tag 5.4 — vier Punkte, zwei Minuten",
+    bereich: "artefakte" },
+
   /* <<< ARTEFAKTE-ENDE */
 
   /* ================= BEISPIELE ================= */

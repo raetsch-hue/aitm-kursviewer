@@ -2,7 +2,8 @@
 
 **Was du wissen musst — und wie stark es zählt**
 Kurs: AI and Digital Transformation Management · neue fische × SPICED, 2026
-Stand: 12.09.2026 · gewichtet sind die Tage 1.4, 1.5, 2.1, 2.2, die Ergänzung zu 2.2, 3.3, 3.4 und **die ganze Woche 4**
+Stand: **28.09.2026** · gewichtet sind die Tage 1.4, 1.5, 2.1, 2.2, die Ergänzung zu 2.2, 3.3, 3.4 und **die ganze Woche 4**
+*Noch nicht gewichtet: 2.3, 2.4, 2.5, 3.1, 3.2, 3.5 sowie **die Wochen 5 und 6**. Die Analysen dazu liegen vollständig vor — siehe den Block unten.*
 *Noch nicht gewichtet: 2.3, 2.4, 2.5, 3.1, 3.2, 3.5. Die Analysen dazu liegen vollständig vor, die Kurzfassungen in `coursebook/woche-2/2.0/` und `coursebook/woche-3/3.0/` — dieser Index holt sie nach.*
 
 > **Ablage seit 12.09.2026:** Die Kurstage liegen in **Wochenordnern** — `coursebook/woche-1/1.4/` bis `coursebook/woche-4/4.5/`. Je Woche enthält der Ordner `N.0/` die Kurzfassung. Der Einstieg (dieser Index und die Quellenliste) bleibt in `coursebook/0/`. Im Viewer ist der Umschalter **„Bereich" oben im Kopf die Wochenauswahl.**
@@ -10,6 +11,35 @@ Stand: 12.09.2026 · gewichtet sind die Tage 1.4, 1.5, 2.1, 2.2, die Ergänzung 
 > **Woche 4 (09.–12.09.2026 ausgewertet):** Für 4.1 bis 4.5 sind **Foliensatz und Tagesseite gegeneinander abgeglichen**; die Dokumente führen den Abgleich jeweils in Abschnitt 0. Drei Zahlen des Kurses halten der Prüfung nicht stand und **eine Fristenangabe ist überholt** — beides ist in den Tagesdokumenten als Korrektur ausgewiesen, nicht im Anhang.
 
 > **Hinweis zum Charakter der Woche-3-Dokumente (09.09.2026):** `coursebook/3.1/` bis `coursebook/3.5/` sind seit dem Umbau **vollständiger Kursinhalt**, nicht mehr Analyse der Folien: Definitionen, Tabellen, Glossare, Aufträge, Prompts und Fallbeispiele stehen dort im Volltext, mit Statusangabe je Beleg. Jedes Dokument trennt sichtbar zwischen **Kursinhalt**, **Belegen, die der Kurs nicht liefert** und **eigener Kritik**. Nicht enthalten ist bewusst nur der Tagesablauf.
+
+---
+
+## Woche 5 und 6 — vollständig analysiert, noch nicht gewichtet
+
+**Die Dokumente liegen in `coursebook/woche-5/` und `coursebook/woche-6/`**, je Tag mit der
+gewohnten Trennung **Kursinhalt · Beleg · eigene Kritik**. Die Gewichtung in diesem Index holt
+sie noch nicht ein; bis dahin die Kurzfassungen in `5.0/` und `6.0/`.
+
+| Woche | Frage | Ergebnis |
+|---|---|---|
+| **5 · Governance** | Wer haftet, was muss belegt werden? | Risikoklassifizierung · Lebenszyklus-RACI · Audit-Mappe · Governance Framework |
+| **6 · Wirtschaftlichkeit** | Was kostet es, und wie verteidige ich die Zahl? | Kostentabelle · 3C und 36-Monats-TCO · Kennzahlen · **Investitionsvorlage** · Modulabschluss |
+
+**Vier Befunde aus beiden Wochen, die in keiner Folie stehen:**
+
+1. **Fünf der sechs Prüfartikel des Audit-Tages sind Anbieterpflichten** — wer sich als Betreiber
+   daran misst, misst sich an fremden Pflichten. Die einschlägige Norm ist **Art. 26**.
+2. **Der Rechtsbezug „Verantwortliche Person nach Art. 17" ist für Betreiber falsch** und wandert
+   aus Woche 5 in Woche 6 mit. Richtig: **Art. 26 Abs. 2**. `[Sekundär]`
+3. **Die Renditezahl 3,7 stammt aus einer von Microsoft beauftragten IDC-Studie**, ist eine
+   Selbstauskunft und hat eine Spitzengruppe bei 10,3 — **der Durchschnitt ist nach oben gezogen**.
+   Die Gegenzahl fehlt im Kurs: MIT NANDA 2025 findet **95 Prozent der Piloten ohne messbaren
+   Ergebnisbeitrag**.
+4. **Der Ausgangswert ist die einzige Zahl, die verfällt.** Er wird an Tag 6.3 verlangt und an
+   6.1 gebraucht — nach dem Start ist der Vorher-Zustand nicht mehr messbar.
+
+> **Werkzeuge dazu im Repository:** `coursetools/roi-rechner.html` (Oberfläche) und
+> `coursetools/roi-rechnen.py` (die verbindliche Rechnung, mit sieben Prüfungen).
 
 ---
 
