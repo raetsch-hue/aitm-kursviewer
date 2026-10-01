@@ -333,6 +333,22 @@ var DOKUMENTE = [
     titel: "Woche 05 · Audit-Zusammenfassung Tag 5.4 — vier Punkte, zwei Minuten",
     bereich: "artefakte" },
 
+  { datei: "../artefakte/woche-06/6.1-kostentabelle-projektstart.md",
+    titel: "Woche 06 · Kostentabelle Tag 6.1 — Befund 1, Stichtag Projektstart",
+    bereich: "artefakte" },
+
+  { datei: "../artefakte/woche-06/6.1-kostentabelle-bewertung-2028.md",
+    titel: "Woche 06 · Kostentabelle Tag 6.1 — Befund 2, dieselbe Tabelle 22 Monate später",
+    bereich: "artefakte" },
+
+  { datei: "../artefakte/woche-06/6.1-kostentreiber-top-10.md",
+    titel: "Woche 06 · Kostentreiber Tag 6.1 — die zehn stärksten, mit Basisraten",
+    bereich: "artefakte" },
+
+  { datei: "../artefakte/woche-06/6.3-drei-kennzahlen-ausgangswert.md",
+    titel: "Woche 06 · Kennzahlen Tag 6.3 — drei Kennzahlen und die Frage nach dem Ausgangswert",
+    bereich: "artefakte" },
+
   /* <<< ARTEFAKTE-ENDE */
 
   /* ================= BEISPIELE ================= */
