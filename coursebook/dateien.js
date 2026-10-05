@@ -153,6 +153,12 @@ var DOKUMENTE = [
   { datei: "woche-6/6.5/6.5_Peer-Jury-und-Retrospektive.md",
     titel: "6.5 · Modul-1-Abschluss: Peer-Jury und Retrospektive" },
 
+  { datei: "woche-7/7.0/7.0_Essentials-Woche-7.md",
+    titel: "7.0 · Essentials Woche 7 — Kapitalwert, Unsicherheit, Portfolio" },
+
+  { datei: "woche-7/7.1/7.1_Die-Werkbank-und-warum-eine-Rendite-nicht-reicht.md",
+    titel: "7.1 · Die Werkbank einrichten, und warum eine Rendite nicht reicht" },
+
   /* ================= BIBLIOTHEK =================
      Eigene Nachschlage-Einträge aus ../bibliothek/.
      Pfad beginnt mit ../ , weil viewer.html in coursebook/ liegt.
@@ -347,6 +353,14 @@ var DOKUMENTE = [
 
   { datei: "../artefakte/woche-06/6.3-drei-kennzahlen-ausgangswert.md",
     titel: "Woche 06 · Kennzahlen Tag 6.3 — drei Kennzahlen und die Frage nach dem Ausgangswert",
+    bereich: "artefakte" },
+
+  { datei: "../artefakte/woche-06/6.4-investitionsvorlage.md",
+    titel: "Woche 06 · Investitionsvorlage Tag 6.4 — 90-Tage-Pilot, fünf Blöcke, zwei Szenarien",
+    bereich: "artefakte" },
+
+  { datei: "../artefakte/woche-06/6.5-pitch-situation.md",
+    titel: "Woche 06 · Pitch-Situation Tag 6.5 — ein Gremium, sechs Rollen, wörtliche Fragen",
     bereich: "artefakte" },
 
   /* <<< ARTEFAKTE-ENDE */
