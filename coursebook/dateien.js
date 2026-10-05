@@ -159,6 +159,18 @@ var DOKUMENTE = [
   { datei: "woche-7/7.1/7.1_Die-Werkbank-und-warum-eine-Rendite-nicht-reicht.md",
     titel: "7.1 · Die Werkbank einrichten, und warum eine Rendite nicht reicht" },
 
+  { datei: "woche-7/7.2/7.2_Die-Zahl-unter-Druck.md",
+    titel: "7.2 · Die Zahl unter Druck: Annahmen, die tragen" },
+
+  { datei: "woche-7/7.3/7.3_Career-Day-Spike-Day-und-die-Unsicherheit.md",
+    titel: "7.3 · Career Day, Spike Day und die Unsicherheit" },
+
+  { datei: "woche-7/7.4/7.4_Wo-die-Rechnung-kippt.md",
+    titel: "7.4 · Wo die Rechnung kippt, und was zuerst kommt" },
+
+  { datei: "woche-7/7.5/7.5_Synthese-Das-Portfolio-vertreten.md",
+    titel: "7.5 · Synthese: Das Portfolio vertreten" },
+
   /* ================= BIBLIOTHEK =================
      Eigene Nachschlage-Einträge aus ../bibliothek/.
      Pfad beginnt mit ../ , weil viewer.html in coursebook/ liegt.
